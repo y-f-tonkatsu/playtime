@@ -1,3 +1,5 @@
+const http = require('http');
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -36,6 +38,9 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+http.createServer(app).listen(3002, function(){
 });
 
 module.exports = app;
