@@ -8,9 +8,10 @@ const Link = require('react-router-dom').Link;
 
 const path = require('path');
 
-const works = require('../public/works/works.json');
-
 const _ = require('lodash');
+
+const Stage = require('./stage');
+const Header = require('./header');
 
 class Doc extends React.Component {
     constructor(props) {
@@ -20,34 +21,10 @@ class Doc extends React.Component {
     render() {
         return (
             <Router>
+                <Header/>
                 <Route path={'/:id'} component={Stage}/>
             </Router>
         );
-    }
-}
-
-class Stage extends React.Component {
-
-    constructor(props) {
-        super(props);
-        const params = props.match.params;
-        const work = _.find(works, (currentWork) => {
-            return currentWork.id.toString() === params.id.toString();
-        });
-        this.state = {
-            'work': work,
-        }
-    }
-
-    render() {
-        return (
-            <Router>
-                <div>
-                    <h1>Stage</h1>
-                    <img src={path.join('works/', this.state.work.path)}/>
-                    <article>{this.state.work.description}</article>
-                </div>
-            </Router>);
     }
 }
 
