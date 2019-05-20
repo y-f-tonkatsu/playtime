@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDom = require('react-dom');
-const style = require('./header.css.css');
+const style = require('./header.css');
 
 class Header extends React.Component {
     render() {

@@ -1,6 +1,17 @@
 .stage{
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+    background: rgba(6, 6, 30, 0.3);
+    overflow-y: scroll;
+    z-index: 200;
+}
+
+.stageImage{
+    display: block;
+    margin: auto;
+    max-width: 80vw;
+    max-height: 70vh;
 }

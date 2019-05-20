@@ -12,6 +12,7 @@ const _ = require('lodash');
 
 const Stage = require('./stage');
 const Header = require('./header');
+const List = require('./list');
 
 class Doc extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class Doc extends React.Component {
             <Router>
                 <Header/>
                 <Route path={'/:id'} component={Stage}/>
+                <List />
             </Router>
         );
     }

@@ -27,13 +27,16 @@ class Stage extends React.Component {
 
     render() {
         return (
-            <Router>
-                <div className={style.stage}>
+            <article className={style.stage}>
+                <Router>
+                    <img
+                        className={style.stageImage}
+                        src={path.join('works/', this.state.work.path)}
+                    />
                     <h1>Stage</h1>
-                    <img src={path.join('works/', this.state.work.path)}/>
-                    <article>{this.state.work.description}</article>
-                </div>
-            </Router>);
+                    <p>{this.state.work.description}</p>
+                </Router>
+            </article>);
     }
 }
 
