@@ -9,6 +9,7 @@ const Link = require('react-router-dom').Link;
 const path = require('path');
 
 const works = require('../public/works/works.json');
+const Util = require('./pt-util');
 
 const _ = require('lodash');
 
@@ -17,9 +18,7 @@ class Stage extends React.Component {
     constructor(props) {
         super(props);
         const params = props.match.params;
-        const work = _.find(works, (currentWork) => {
-            return currentWork.id.toString() === params.id.toString();
-        });
+        const work = Util.getImage(props.works, params.id);
         this.state = {
             'work': work,
         }

@@ -14,6 +14,8 @@ const Stage = require('./stage');
 const Header = require('./header');
 const List = require('./list');
 
+const works = require('../public/works/works.json');
+
 class Doc extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +26,7 @@ class Doc extends React.Component {
             <Router>
                 <Header/>
                 <Route path={'/:id'} component={Stage}/>
-                <List />
+                <List works={works} />
             </Router>
         );
     }

@@ -5,8 +5,6 @@ const style = require('./list.css');
 const path = require('path')
 const _ = require('lodash');
 
-const works = require('../public/works/works.json');
-
 class ListItem extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +13,6 @@ class ListItem extends React.Component {
         }
 
     }
-
     render() {
         const work = this.state.work;
         return (
@@ -28,10 +25,17 @@ class ListItem extends React.Component {
 
 class List extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            'works': props.works
+        }
+
+    }
     render() {
 
         const items = [];
-        _.forEach(works, (work) => {
+        _.forEach(this.state.works, (work) => {
             items.push(<ListItem work={work}/>);
         });
 
@@ -43,4 +47,7 @@ class List extends React.Component {
     }
 }
 
-module.exports = List;
+module.exports = {
+    'List': List,
+    'ListItem': ListItem,
+};
