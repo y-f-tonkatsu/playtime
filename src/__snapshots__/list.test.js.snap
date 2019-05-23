@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image List 1`] = `
+<ul
+  className="imageList"
+>
+  <li>
+    <img
+      src="works\\\\absphoto\\\\002_roppongi.jpg"
+    />
+  </li>
+  <li>
+    <img
+      src="works\\\\absphoto\\\\001_maru2.jpg"
+    />
+  </li>
+  <li>
+    <img
+      src="works\\\\absphoto\\\\000_maru.jpg"
+    />
+  </li>
+  <li>
+    <img
+      src="works\\\\absphoto\\\\010_abs004.jpg"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Image List Item 1`] = `
+<li>
+  <img
+    src="works\\\\absphoto\\\\010_abs004.jpg"
+  />
+</li>
+`;

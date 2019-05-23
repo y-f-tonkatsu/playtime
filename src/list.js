@@ -36,7 +36,7 @@ class List extends React.Component {
 
         const items = [];
         _.forEach(this.state.works, (work) => {
-            items.push(<ListItem work={work}/>);
+            items.push(<ListItem work={work} key={work.id}/>);
         });
 
         return (
