@@ -4,23 +4,35 @@ exports[`Image List 1`] = `
 <ul
   className="imageList"
 >
-  <li>
+  <li
+    className="imageListItem"
+  >
     <img
+      className="imageListImage"
       src="works\\\\absphoto\\\\002_roppongi.jpg"
     />
   </li>
-  <li>
+  <li
+    className="imageListItem"
+  >
     <img
+      className="imageListImage"
       src="works\\\\absphoto\\\\001_maru2.jpg"
     />
   </li>
-  <li>
+  <li
+    className="imageListItem"
+  >
     <img
+      className="imageListImage"
       src="works\\\\absphoto\\\\000_maru.jpg"
     />
   </li>
-  <li>
+  <li
+    className="imageListItem"
+  >
     <img
+      className="imageListImage"
       src="works\\\\absphoto\\\\010_abs004.jpg"
     />
   </li>
@@ -28,8 +40,11 @@ exports[`Image List 1`] = `
 `;
 
 exports[`Image List Item 1`] = `
-<li>
+<li
+  className="imageListItem"
+>
   <img
+    className="imageListImage"
     src="works\\\\absphoto\\\\010_abs004.jpg"
   />
 </li>

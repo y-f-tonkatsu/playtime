@@ -12,9 +12,9 @@ const _ = require('lodash');
 
 const Stage = require('./stage');
 const Header = require('./header');
-const List = require('./list');
+const {List, ListItem} = require('./list');
 
-const works = require('../public/works/works.json');
+const works = require('../public/works/works-size-added.json');
 
 class Doc extends React.Component {
     constructor(props) {
@@ -25,8 +25,11 @@ class Doc extends React.Component {
         return (
             <Router>
                 <Header/>
-                <Route path={'/:id'} component={Stage}/>
-                <List works={works} />
+                <Route path={'/:id'}
+                       render={(routeProps) => (
+                           <Stage {...routeProps} {...{works}} />
+                       )}/>
+                <List works={works}/>
             </Router>
         );
     }

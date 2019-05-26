@@ -1,9 +1,12 @@
 const React = require('react');
 const ReactDom = require('react-dom');
+const Link = require('react-router-dom').Link;
 const style = require('./list.css');
 
 const path = require('path')
 const _ = require('lodash');
+
+const Util = require('./pt-util');
 
 class ListItem extends React.Component {
     constructor(props) {
@@ -13,13 +16,46 @@ class ListItem extends React.Component {
         }
 
     }
+
     render() {
         const work = this.state.work;
         return (
-            <li>
-                <img src={path.join('works/', this.state.work.path)}/>
-            </li>
+            <Link to={':' + work.id}
+                  className={style.imageListItem}>
+                <img className={style.imageListImage}
+                     src={Util.getThumbPath(work)}
+                />
+                <div className={style.imageListItemOverLay}>
+                    <h3 className={style.imageListTitle}>{work.title}</h3>
+                    <p className={style.imageListDescription}>{work.description}</p>
+                </div>
+            </Link>
         );
+    }
+}
+
+class Column extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            works: props.works,
+            columnId: props.columnId
+        }
+    }
+
+    render() {
+
+        const items = [];
+        this.state.works.forEach((work) => {
+            items.push(<ListItem work={work} key={work.id}/>)
+        });
+
+        return (
+            <article className={[style['imageColumn' + this.state.columnId], style.columns].join(' ')}>
+                {items}
+            </article>
+        )
+
     }
 }
 
@@ -32,18 +68,46 @@ class List extends React.Component {
         }
 
     }
+
     render() {
 
-        const items = [];
-        _.forEach(this.state.works, (work) => {
-            items.push(<ListItem work={work} key={work.id}/>);
-        });
+        const columns = this.getColumns();
 
         return (
-            <ul className={style.imageList}>
-                {items}
-            </ul>
+            <div className={style.imageListRoot}>
+                <div className={style.imageList}>
+                    {columns[0]}
+                    {columns[1]}
+                    {columns[2]}
+                    {columns[3]}
+                </div>
+            </div>
         );
+    }
+
+    getColumns() {
+        const items = [[], [], [], []];
+        const heights = [0, 0, 0, 0];
+        let currentColumn = 0;
+        this.state.works.forEach((work) => {
+            currentColumn = 0;
+            let tempH = heights[0];
+            for (let i = 1; i < 4; i++) {
+                if (tempH > heights[i]) {
+                    currentColumn = i;
+                    tempH = heights[i];
+                }
+            }
+
+            items[currentColumn].push(work);
+            heights[currentColumn] += parseInt(work.thumbHeight);
+        });
+
+        const columns = [];
+        _.times(4, (i) => {
+            columns.push(<Column works={items[i]} columnId={i} key={i}/>);
+        });
+        return columns;
     }
 }
 

@@ -1,17 +1,50 @@
-.stage{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    background: rgba(6, 6, 30, 0.3);
+.stage {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
     overflow-y: scroll;
     z-index: 200;
 }
 
-.stageImage{
+.stageBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 6, 30, 0.8);
+    cursor: pointer;
+    z-index: -100;
+}
+
+.stageImage {
+    position: relative;
     display: block;
-    margin: auto;
+    margin: 2rem auto 1rem;
     max-width: 80vw;
     max-height: 70vh;
+    z-index: 210;
+}
+
+.stageTitle {
+    position: relative;
+    font-family: ta-f1blockline, sans-serif;
+    color: rgba(250, 250, 220, 1);
+    display: block;
+    width: 70vw;
+    margin: 1rem auto;
+    font-size: 1.8rem;
+    text-align: center;
+    z-index: 210;
+}
+
+.stageDescription {
+    position: relative;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    color: rgba(250, 250, 220, 1);
+    display: block;
+    width: 80vw;
+    margin: 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 210;
 }
