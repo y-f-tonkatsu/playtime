@@ -47,13 +47,12 @@
 .imageListImage {
     position:relative;
     display: block;
-    width: 96%;
-    margin: 4px 2% ;
+    width: 94%;
+    margin: 6px 3% ;
 }
 
 .columns {
     width: 25%;
-    padding-top: 10%;
     overflow-y: visible;
 }
 

@@ -8,7 +8,7 @@
 }
 
 .stageBg {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(6, 6, 30, 0.8);
@@ -30,9 +30,9 @@
     font-family: ta-f1blockline, sans-serif;
     color: rgba(250, 250, 220, 1);
     display: block;
-    width: 70vw;
+    width: 90vw;
     margin: 1rem auto;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     z-index: 210;
 }
@@ -47,4 +47,18 @@
     font-size: 1rem;
     text-align: center;
     z-index: 210;
+}
+
+.stageLinks {
+    display: inline-block;
+    font-family: ta-f1blockline, sans-serif;
+    color: rgba(200, 100, 120, 1);
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 640px) {
+    .stageLinks {
+        font-size: 0.8rem;
+    }
 }

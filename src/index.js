@@ -8,8 +8,6 @@ const Link = require('react-router-dom').Link;
 
 const path = require('path');
 
-const _ = require('lodash');
-
 const Stage = require('./stage');
 const Header = require('./header');
 const {List, ListItem} = require('./list');
@@ -24,7 +22,6 @@ class Doc extends React.Component {
     render() {
         return (
             <Router>
-                <Header/>
                 <Route path={'/:id'}
                        render={(routeProps) => (
                            <Stage {...routeProps} {...{works}} />

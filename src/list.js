@@ -6,6 +6,8 @@ const style = require('./list.css');
 const path = require('path')
 const _ = require('lodash');
 
+const Header = require('./header');
+
 const Util = require('./pt-util');
 
 class ListItem extends React.Component {
@@ -69,22 +71,6 @@ class List extends React.Component {
 
     }
 
-    render() {
-
-        const columns = this.getColumns();
-
-        return (
-            <div className={style.imageListRoot}>
-                <div className={style.imageList}>
-                    {columns[0]}
-                    {columns[1]}
-                    {columns[2]}
-                    {columns[3]}
-                </div>
-            </div>
-        );
-    }
-
     getColumns() {
         const items = [[], [], [], []];
         const heights = [0, 0, 0, 0];
@@ -108,6 +94,23 @@ class List extends React.Component {
             columns.push(<Column works={items[i]} columnId={i} key={i}/>);
         });
         return columns;
+    }
+
+    render() {
+
+        const columns = this.getColumns();
+
+        return (
+            <div className={style.imageListRoot}>
+                <Header/>
+                <div className={style.imageList}>
+                    {columns[0]}
+                    {columns[1]}
+                    {columns[2]}
+                    {columns[3]}
+                </div>
+            </div>
+        );
     }
 }
 
