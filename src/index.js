@@ -22,7 +22,7 @@ class Doc extends React.Component {
     render() {
         return (
             <Router>
-                <Route path={':id'}
+                <Route path={'/playtime:id'}
                        render={(routeProps) => (
                            <Stage {...routeProps} {...{works}} />
                        )}/>

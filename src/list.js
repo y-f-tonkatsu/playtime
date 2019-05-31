@@ -22,7 +22,7 @@ class ListItem extends React.Component {
     render() {
         const work = this.state.work;
         return (
-            <Link to={':' + work.id}
+            <Link to={'/playtime:' + work.id}
                   className={style.imageListItem}>
                 <img className={style.imageListImage}
                      src={Util.getThumbPath(work)}
