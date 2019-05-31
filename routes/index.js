@@ -80,7 +80,7 @@ router.get('/', function (req, res, next) {
     respond(req, res, next, 0);
 });
 
-router.get('/::id', function (req, res, next) {
+router.get('::id', function (req, res, next) {
     console.log(req.params);
     var id = parseInt(req.params["id"]);
     respond(req, res, next, id);
