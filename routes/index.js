@@ -61,7 +61,7 @@ var respond = function (req, res, next, id) {
         og_title: title,
         og_description: description,
         og_url: ogUrl,
-        og_thumb: thumb.reaplace('playtime', ':3004'),
+        og_thumb: thumb.replace('playtime', ':3004'),
         og_thumb_w: stage.width,
         og_thumb_h: stage.height,
         baseUrl: base,
