@@ -12,7 +12,7 @@ var worksJson;
 var respond = function (req, res, next, id) {
 
     if (!worksJson) {
-        worksJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../public/works/works.json'), 'utf8'));
+        worksJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../public/works/works-size-added.json'), 'utf8'));
     }
 
     let stage;
@@ -61,6 +61,8 @@ var respond = function (req, res, next, id) {
         og_description: description,
         og_url: ogUrl,
         og_thumb: thumb,
+        og_thumb_w: stage.thumbWidth,
+        og_thumb_h: stage.thumbHeight,
         baseUrl: base,
         currentUrl: current,
         worksUrl: base + "/works",
