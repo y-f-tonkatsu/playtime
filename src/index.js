@@ -21,7 +21,7 @@ class Doc extends React.Component {
 
     render() {
         return (
-            <Router>
+            <Router basename="/playtime/">
                 <Route path={'/:id'}
                        render={(routeProps) => (
                            <Stage {...routeProps} {...{works}} />
