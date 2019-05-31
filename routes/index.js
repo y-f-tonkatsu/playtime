@@ -53,7 +53,7 @@ var respond = function (req, res, next, id) {
         title = stage.title;
         description = stage.description;
         ogUrl = current;
-        thumb = path.join(base, "works", stage.path);
+        thumb = path.join(base, "works", stage.thumb);
     }
 
 
@@ -62,8 +62,8 @@ var respond = function (req, res, next, id) {
         og_description: description,
         og_url: ogUrl,
         og_thumb: thumb,
-        og_thumb_w: stage.width,
-        og_thumb_h: stage.height,
+        og_thumb_w: stage.thumbWidth,
+        og_thumb_h: stage.thumbHeight,
         baseUrl: base,
         currentUrl: current,
         worksUrl: base + "/works",
