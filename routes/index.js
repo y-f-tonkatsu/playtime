@@ -44,7 +44,7 @@ var respond = function (req, res, next, id) {
         title = "YFT's PlayTime"
         description = '山田 F とんかつの個人的な楽しみのためのサイトです。';
         ogUrl = base;
-        thumb = path.join(base, "works/absphoto/000_maru.jpg");
+        thumb =base + "works/absphoto/000_maru.jpg";
         index = true;
         stage = worksJson[0];
         id = 0;
@@ -53,7 +53,7 @@ var respond = function (req, res, next, id) {
         title = stage.title;
         description = stage.description;
         ogUrl = current;
-        thumb = path.join(base, "works", stage.path);
+        thumb = base + "works" + stage.path;
     }
 
 
