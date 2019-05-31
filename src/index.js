@@ -17,7 +17,6 @@ const works = require('../public/works/works-size-added.json');
 class Doc extends React.Component {
     constructor(props) {
         super(props);
-        console.log(works);
     }
 
     render() {
@@ -34,6 +33,7 @@ class Doc extends React.Component {
 }
 
 window.onload = function () {
+    console.log('load');
     ReactDom.render(
         <Doc/>,
         document.getElementById('root')
