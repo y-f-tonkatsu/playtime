@@ -30,7 +30,7 @@ var respond = function (req, res, next, id) {
         host: req.get('host'),
         pathname: req.originalUrl
     });
-    current = "http://knights.ton-katsu.net/playtime/" + id;
+    current = "http://knights.ton-katsu.net/playtime/:" + id;
 
     _.each(worksJson, function (work) {
         if (work.id == id) {
