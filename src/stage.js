@@ -10,7 +10,7 @@ const path = require('path');
 
 const Util = require('./pt-util');
 
-const OG = require('./og');
+const OG = require('./helm');
 
 const _ = require('lodash');
 

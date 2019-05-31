@@ -17,12 +17,18 @@ var respond = function (req, res, next, id) {
 
     let stage;
 
+    _.each(worksJson, function (work) {
+        if (work.id == id) {
+            stage = work;
+        }
+    });
+
     let base = '';
     let title, keyowords, description, ogUrl, thumb;
 
     let index = false;
     if (!stage) {
-        title = 'Y.F.T のプレイタイム'
+        title = "YFT's PlayTime"
         description = '山田 F とんかつの個人的な楽しみのためのサイトです。';
         ogUrl = base;
         thumb = base + "works/absphoto/000_maru.jpg";
@@ -59,7 +65,7 @@ router.get('/', function (req, res, next) {
     respond(req, res, next, 0);
 });
 
-router.get('/:id/', function (req, res, next) {
+router.get('/:id', function (req, res, next) {
     var id = parseInt(req.params["id"]);
     respond(req, res, next, id);
 });

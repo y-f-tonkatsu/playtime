@@ -10,6 +10,7 @@ const path = require('path');
 
 const Stage = require('./stage');
 const Header = require('./header');
+const Helm = require('./helm');
 const {List, ListItem} = require('./list');
 
 const works = require('../public/works/works-size-added.json');
@@ -26,6 +27,7 @@ class Doc extends React.Component {
                        render={(routeProps) => (
                            <Stage {...routeProps} {...{works}} />
                        )}/>
+                <Route path={'/'} exact conponent={Helm}/>
                 <List works={works}/>
             </Router>
         );
