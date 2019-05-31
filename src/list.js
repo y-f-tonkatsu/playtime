@@ -21,7 +21,6 @@ class ListItem extends React.Component {
 
     render() {
         const work = this.state.work;
-        console.log(work);
         return (
             <Link to={':' + work.id}
                   className={style.imageListItem}>

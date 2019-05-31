@@ -17,6 +17,7 @@ const works = require('../public/works/works-size-added.json');
 class Doc extends React.Component {
     constructor(props) {
         super(props);
+        console.log(works);
     }
 
     render() {
