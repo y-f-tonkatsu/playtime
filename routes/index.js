@@ -52,7 +52,7 @@ var respond = function (req, res, next, id) {
         title = stage.title;
         description = stage.description;
         ogUrl = current;
-        thumb = base + "works" + stage.path;
+        thumb = path.join(base, "works", stage.path);
     }
 
 
