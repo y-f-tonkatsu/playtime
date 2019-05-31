@@ -54,17 +54,17 @@ class Stage extends React.Component {
     render() {
         return (
             <article className={style.stage}>
-                <Link to={'/'}
+                <Link to={'/playtime/'}
                       className={style.stageBg}/>
                 <div className={style.stageTitleContainer}>
-                    <Link to={this.state.next && '/:' + this.state.next.id}
+                    <Link to={this.state.next && '/playtime/:' + this.state.next.id}
                           className={[style.stageLinks, style.stageLinksNext].join(' ')}
                           onClick={() => {
                               if (!this.state.next) return;
                               this.setWork(this.state.next);
                           }}>←NEXT</Link>
                     <h1 className={style.stageTitle}>{this.state.work.title}</h1>
-                    <Link to={this.state.prev && '/:' + this.state.prev.id}
+                    <Link to={this.state.prev && '/playtime/:' + this.state.prev.id}
                           className={[style.stageLinks, style.stageLinksPrev].join(' ')}
                           onClick={() => {
                               if (!this.state.prev) return;
