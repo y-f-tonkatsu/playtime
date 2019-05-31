@@ -17,6 +17,7 @@ class Stage extends React.Component {
     constructor(props) {
         super(props);
         const params = props.match.params;
+        console.log(params);
         const id = params.id.replace(':', '');
         const work = Util.getImage(props.works, id);
         const prevId = parseInt(work.id) - 1;
