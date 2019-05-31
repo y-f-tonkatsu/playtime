@@ -55,25 +55,25 @@ class Stage extends React.Component {
             <article className={style.stage}>
                 <Link to={'/'}
                       className={style.stageBg}/>
+                <div className={style.stageTitleContainer}>
+                    <Link to={this.state.next && '/:' + this.state.next.id}
+                          className={[style.stageLinks, style.stageLinksNext].join(' ')}
+                          onClick={() => {
+                              if (!this.state.next) return;
+                              this.setWork(this.state.next);
+                          }}>←NEXT</Link>
+                    <h1 className={style.stageTitle}>{this.state.work.title}</h1>
+                    <Link to={this.state.prev && '/:' + this.state.prev.id}
+                          className={[style.stageLinks, style.stageLinksPrev].join(' ')}
+                          onClick={() => {
+                              if (!this.state.prev) return;
+                              this.setWork(this.state.prev);
+                          }}>PREV→</Link>
+                </div>
                 <img
                     className={style.stageImage}
                     src={Util.getImagePath(this.state.work)}
                 />
-                <h1 className={style.stageTitle}>
-                    {this.state.next &&
-                    <Link to={'/:' + this.state.next.id}
-                          className={style.stageLinks}
-                          onClick={() => {
-                              this.setWork(this.state.next);
-                          }}>←NEXT</Link>}
-                    {this.state.work.title}
-                    {this.state.prev &&
-                    <Link to={'/:' + this.state.prev.id}
-                          className={style.stageLinks}
-                          onClick={() => {
-                              this.setWork(this.state.prev);
-                          }}>PREV→</Link>}
-                </h1>
                 <p className={style.stageDescription}>
                     {this.state.work.description}
                 </p>

@@ -25,14 +25,14 @@
     z-index: 210;
 }
 
-.stageTitle {
+.stageTitleContainer {
     position: relative;
     font-family: ta-f1blockline, sans-serif;
     color: rgba(250, 250, 220, 1);
     display: block;
     width: 90vw;
     margin: 1rem auto;
-    font-size: 1.6rem;
+    font-size: 2rem;
     text-align: center;
     z-index: 210;
 }
@@ -49,13 +49,25 @@
     z-index: 210;
 }
 
+.stageTitle {
+    display: inline-block;
+    max-width: 60%;
+}
+
 .stageLinks {
     display: inline-block;
     font-family: ta-f1blockline, sans-serif;
     color: rgba(200, 100, 120, 1);
-    font-size: 1.2rem;
-    margin: 0 10px;
 }
+
+.stageLinksNext {
+    float: left;
+}
+
+.stageLinksPrev {
+    float: right;
+}
+
 
 @media screen and (max-width: 640px) {
     .stageLinks {
