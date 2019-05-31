@@ -10,8 +10,6 @@ const path = require('path');
 
 const Util = require('./pt-util');
 
-const OG = require('./helm');
-
 const _ = require('lodash');
 
 class Stage extends React.Component {
@@ -79,8 +77,6 @@ class Stage extends React.Component {
                 <p className={style.stageDescription}>
                     {this.state.work.description}
                 </p>
-
-                <OG work={this.state.work} />
 
             </article>);
     }

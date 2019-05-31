@@ -16,6 +16,20 @@ var respond = function (req, res, next, id) {
     }
 
     let stage;
+    let base = '';
+    let title, keyowords, description, ogUrl, thumb;
+
+    base = url.format({
+        protocol: req.protocol,
+        host: req.get('host')
+    });
+
+    var current = url.format({
+        protocol: req.protocol,
+        host: req.get('host'),
+        pathname: req.originalUrl
+    });
+    //current = "http://knights.ton-katsu.net/playtime/" + id;
 
     _.each(worksJson, function (work) {
         if (work.id == id) {
@@ -23,15 +37,13 @@ var respond = function (req, res, next, id) {
         }
     });
 
-    let base = '';
-    let title, keyowords, description, ogUrl, thumb;
 
     let index = false;
     if (!stage) {
         title = "YFT's PlayTime"
         description = '山田 F とんかつの個人的な楽しみのためのサイトです。';
         ogUrl = base;
-        thumb = base + "works/absphoto/000_maru.jpg";
+        thumb = path.join(base, "works/absphoto/000_maru.jpg");
         index = true;
         stage = worksJson[0];
         id = 0;
@@ -65,7 +77,8 @@ router.get('/', function (req, res, next) {
     respond(req, res, next, 0);
 });
 
-router.get('/:id', function (req, res, next) {
+router.get('/::id', function (req, res, next) {
+    console.log(req.params);
     var id = parseInt(req.params["id"]);
     respond(req, res, next, id);
 });
