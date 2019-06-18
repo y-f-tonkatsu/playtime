@@ -271,7 +271,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/kyoai_v001_atlas_.png?1560870446809", id:"kyoai_v001_atlas_"}
+		{src:"images/kyoai_v001_atlas_.png?1560870859611", id:"kyoai_v001_atlas_"}
 	],
 	preloads: []
 };
