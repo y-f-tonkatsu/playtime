@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <title>QuickSearch</title>
     <style>
+        #wrpa{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
         input:focus {
             outline: none;
         }
 
-        #tf {
+        #tf, #tf:focus {
             border: 0;
             display: block;
             position: absolute;
             left: 16%;
-            top: 12.3%;
+            top: 1.3%;
             z-index: 100;
             height: 4.3%;
             font-size: 3vh;
@@ -31,6 +36,7 @@
             crossorigin="anonymous"></script>
     <script>
         var list = {
+            '': '00',
             'ひ': '0',
             'ひか': '1',
             'ひかり': '2',
@@ -63,7 +69,9 @@
     </script>
 </head>
 <body>
-<input id="tf" type="text">
-<img id="main" src="img000.png">
+<div id="wrap">
+    <input id="tf" type="text">
+    <img id="main" src="img000.png">
+</div>
 </body>
 </html>
