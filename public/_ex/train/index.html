@@ -17,12 +17,13 @@
 
         function init() {
             $('.loader').hide();
+            $('#input, #input2').show();
             $('.bg').attr('src', 'img/bg1.jpg');
             $('.bg').click(function(){
                 $('.bg').attr('src', 'img/bg0.jpg').click(function () {
                     $('.loader').show();
                     $('#input, #input2').hide();
-                    $('.bg').attr('src', 'img/bg2.jpg').click(init);
+                    $('.bg').unbind().attr('src', 'img/bg2.jpg').click(init);
                 })
             });
         }
