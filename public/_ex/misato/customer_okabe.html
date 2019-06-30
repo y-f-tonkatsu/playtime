@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css"
+          href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+
+    <script>
+
+        var his = [
+            ['2018/10/15', '振込', '窓口にてお振込み'],
+            ['2019/1/24', '引き出し', '窓口にてお振込み'],
+            ['2019/3/22', '投資信託', '窓口にてお振込み'],
+            ['2019/8/13', '預入れ', '窓口にてお振込み'],
+            ['2019/9/25', '引き出し', '窓口にてお振込み'],
+            ['2019/11/8', '振込', '窓口にてお振込み'],
+        ];
+
+        var inkanName = 'okabe'
+
+    </script>
+
+    <link rel="stylesheet" href="customer.css">
+    <script src="customer.js"></script>
+
+
+</head>
+<body>
+<div class="inkan-wrap">
+    <img class="inkan"/>
+</div>
+<header>顧客情報</header>
+<div class="cont">
+    <div class="col">
+        <p class="half">
+            <label>顧客コード</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>氏名</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>生年月日</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>氏名カナ</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>性別</label>
+            <select name="sex">
+                <option value="m">男</option>
+                <option value="f">女</option>
+            </select>
+            <label>年齢</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>〒</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="full">
+            <label>自宅住所</label>
+            <input type="text" value="">
+        </p>
+        <p class="full">
+            <label>ビル名等</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>TEL</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>FAX</label>
+            <input type="text" value="">
+        </p>
+        <p class="full">
+            <label>勤務先名</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>〒</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="full">
+            <label>勤務先名住所</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>勤務先TEL</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>FAX</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>勤続年数</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>年収</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>職業種別</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>事業内容</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>婚否</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <br>
+        <br>
+        <p class="full">
+            <label>備考</label>
+            <textarea></textarea>
+        </p>
+    </div>
+
+    <div class="col">
+        <p class="full">
+            <label>金融機関名</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>支店番号</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>支店名</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+            <label>口座番号</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>通帳種類</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>カード種類</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>ダイレクト講座</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>口座開設日</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>最終履歴日</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="half">
+            <label>最終取扱日</label>
+            <input type="text" value="">
+        </p>
+        <p class="half">
+        </p>
+        <p class="full">
+        <div class="history">
+            ■履歴 <input type="button" value="新規に履歴を登録">
+            <div class="table-wrap">
+                <table border="1">
+                    <tr>
+                        <th></th>
+                        <th>日付</th>
+                        <th>取扱</th>
+                        <th>内容</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
