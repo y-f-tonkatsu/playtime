@@ -3,11 +3,14 @@ $(function () {
     for (var i = 0; i < len; i++) {
         var cell = $('td').get(i);
 
+
         if (i % 4 == 0) {
             $(cell).html(i / 4 + 1 + '<input type="button" value="詳細">');
         } else {
-            $(cell).text(his[Math.floor(i / 4)][i % 4 - 1]);
+            $(cell).html('<input class="his_input" type="text">');
+            //$(cell).text(his[Math.floor(i / 4)][i % 4 - 1]);
         }
+
     }
 
     $('.inkan-wrap').hide();
