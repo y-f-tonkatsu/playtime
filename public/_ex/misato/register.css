@@ -8,7 +8,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: rgb(167, 241, 255);
+    background: #cff8ac;
 }
 
 header {
@@ -90,15 +90,15 @@ td:first-child {
 
 th {
     text-align: center;
-    background: #66aa66;
+    background: #c0f0ac;
 }
 
 tr:nth-child(odd) {
-    background: #eff8e0;
+    background: #effae0;
 }
 
 tr:nth-child(even) {
-    background: #cff8ac;
+    background: #dfffcc;
 }
 
 td {
