@@ -16,6 +16,10 @@
     <script>
 
         function init() {
+
+            document.getElementById("root").webkitRequestFullscreen() ;
+
+
             $('.loader').hide();
             $('#input, #input2').show();
             $('.bg').attr('src', 'img/bg1.jpg');
@@ -36,7 +40,7 @@
 </head>
 
 <body>
-<div class="wrap">
+<div class="wrap" id="root">
     <img class="bg" src="img/bg1.jpg">
     <div class="loader">
         <img src="img/loader.png">
