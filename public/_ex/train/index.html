@@ -16,14 +16,15 @@
     <script>
 
         function init() {
-
-            document.getElementById("root").webkitRequestFullscreen() ;
+            var rootElement = document.getElementById("root");
+            rootElement.requestFullscreen = rootElement.requestFullscreen || rootElement.mozRequestFullScreen || rootElement.webkitRequestFullscreen || rootElement.msRequestFullscreen;
+            rootElement.requestFullscreen();
 
 
             $('.loader').hide();
             $('#input, #input2').show();
             $('.bg').attr('src', 'img/bg1.jpg');
-            $('.bg').click(function(){
+            $('.bg').click(function () {
                 $('.bg').attr('src', 'img/bg0.jpg').click(function () {
                     $('.loader').show();
                     $('#input, #input2').hide();
