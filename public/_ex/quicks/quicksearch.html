@@ -13,10 +13,11 @@
         input, input:focus {
             outline: none;
             border: 0;
+            background: none;
             display: block;
             position: absolute;
             left: 16%;
-            top: 20pt;
+            top: 16pt;
             z-index: 100;
             height: 7%;
             font-size: 32pt;
@@ -44,8 +45,8 @@
             'ひかりのはこ': '5',
         }
 
-        function change(src) {
-            $('#main').attr('src', src);
+        function change(src, onload) {
+            $('#main').attr('src', src).on("load", onload);
         };
 
         $(function () {
@@ -54,14 +55,15 @@
             tf.hide();
 
             $('#main').on('click', function () {
-                change('img00.png');
-                tf.show().focus();
+                change('img00.png', function(){
+                    tf.show().focus();
+                });
             });
 
             tf.on("input", function () {
                 var val = tf.val();
                 if (list[val]) {
-                    change('img' + list[val] + '.png');
+                    change('img' + list[val] + '.png', null);
                 }
             });
         });
