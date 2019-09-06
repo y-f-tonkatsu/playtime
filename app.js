@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-http.createServer(app).listen(80, function(){
+http.createServer(app).listen(3004, function(){
 });
 
 module.exports = app;
