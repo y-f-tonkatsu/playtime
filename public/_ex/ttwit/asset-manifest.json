@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/playtime/_ex/ttwit/static/css/main.b100e6da.chunk.css",
+    "main.js": "/playtime/_ex/ttwit/static/js/main.7cfd104e.chunk.js",
+    "main.js.map": "/playtime/_ex/ttwit/static/js/main.7cfd104e.chunk.js.map",
+    "runtime-main.js": "/playtime/_ex/ttwit/static/js/runtime-main.c77cd5f0.js",
+    "runtime-main.js.map": "/playtime/_ex/ttwit/static/js/runtime-main.c77cd5f0.js.map",
+    "static/js/2.7e7f729f.chunk.js": "/playtime/_ex/ttwit/static/js/2.7e7f729f.chunk.js",
+    "static/js/2.7e7f729f.chunk.js.map": "/playtime/_ex/ttwit/static/js/2.7e7f729f.chunk.js.map",
+    "index.html": "/playtime/_ex/ttwit/index.html",
+    "precache-manifest.ecc6795aa791b2df7117e412f0c4f12b.js": "/playtime/_ex/ttwit/precache-manifest.ecc6795aa791b2df7117e412f0c4f12b.js",
+    "service-worker.js": "/playtime/_ex/ttwit/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/playtime/_ex/ttwit/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/playtime/_ex/ttwit/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c77cd5f0.js",
+    "static/js/2.7e7f729f.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.7cfd104e.chunk.js"
+  ]
+}
