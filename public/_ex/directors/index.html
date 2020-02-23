@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: meiryo, 'MS PGothic', 'Hiragino Kaku Gothic Pro', sans-serif;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body, div, p, form, input, textarea, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, table, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        input, textarea, select {
+            font-size: 0.9em;
+            line-height: 1.0em;
+            padding: 2px;
+            margin: 0px 0px 0px 0px;
+            font-family: monospace;
+        }
+
+        input[type="file"] {
+            width: 100%;
+        }
+
+        p {
+            font-size: 1.0em;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 1.4em;
+        }
+
+        th {
+            white-space: normal;
+            text-align: left;
+            font-weight: normal
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        button {
+            padding: 3px;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .comform-wrap {
+            box-sizing: border-box;
+            position: relative;
+            margin: 8px auto 8px auto;
+            margin-top: 8px;
+            max-width: 860px;
+            border: 1px solid #FFFFFF;
+            background-color: #FFFFFF;
+            padding: 4px 4px 0px 4px;
+        }
+
+        .comform-title {
+            text-align: center;
+            max-width: auto;
+            font-size: 16px;
+            line-height: 1.6em;
+            color: #FFFFFF;
+            background-color: #ABABAB;
+            border: 1px solid #AAAAAA;
+            font-weight: bold;
+            padding: 6px 6px 6px 6px;
+            margin: 8px auto 16px auto;
+        }
+
+        .comform-container {
+            box-sizing: border-box;
+            border-top: 1px solid #CCCCCC;
+            border-left: 1px solid #CCCCCC;
+        }
+
+        .comform-row {
+            table-layout: fixed;
+            display: table;
+            width: 100%;
+        }
+
+        .comform-row .itemTitle {
+            display: table-cell;
+            width: 30%;
+            vertical-align: top;
+            padding: 10px 10px 10px 10px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #555555;
+            background-color: #EEEEEE;
+            border: 0;
+            border-right: 1px solid #CCCCCC;
+            border-bottom: 1px solid #CCCCCC;
+            box-sizing: border-box;
+        }
+
+        .comform-row .itemInput {
+            display: table-cell;
+            width: 70%;
+            vertical-align: text-top;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555555;
+            background-color: #FFFFFF;
+            padding: 10px 10px 10px 10px;
+            border: 0;
+            border-right: 1px solid #CCCCCC;
+            border-bottom: 1px solid #CCCCCC;
+            box-sizing: border-box;
+        }
+
+        .itemInput.itemComment {
+            overflow-wrap: break-word;
+        }
+
+        .itemInput input[type="text"], .itemInput input[type="email"], .itemInput textarea, .itemInput select {
+            font-size: 0.95em;
+            font-family: -apple-system, BlinkMacSystemFont, monospace;
+            line-height: 1.6;
+            padding: 4px 8px 4px 8px;
+            margin: 2px 0px;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #BBBBBB;
+        }
+
+        .itemInput select {
+            padding-left: 0px;
+            padding-right: 0px;
+            max-width: 100%;
+        }
+
+        .itemInput select option {
+            color: #444;
+            background-color: #fff;
+        }
+
+        .itemInput figure {
+            margin: 0;
+        }
+
+        .itemInput input[type="text"]:focus, .itemInput input[type="email"]:focus, .itemInput textarea:focus, .itemInput select:focus {
+            box-shadow: 0px 0px 3px #f05050;
+        }
+
+        .itemInput label:hover {
+            text-shadow: 0px 0px 2px #dd8080;
+        }
+
+        .comform-row figure img[onclick]:hover {
+            cursor: pointer;
+        }
+
+        .annot {
+            color: #DC143C;
+            font-size: 0.9em;
+            padding: 0px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .annot-upper {
+            margin: 0px 4px 1px 0px;
+        }
+
+        .annot-lower {
+            margin: 1px 4px 0px 0px;
+        }
+
+        .req-mark {
+            display: inline-block;
+            font-size: 0.8em;
+            height: 1.4em;
+            color: #EA3049;
+            background-color: ;
+            font-family: meiryo, 'Hiragino Kaku Gothic Pro', sans-serif;
+            white-space: nowrap;
+            border-radius: 4px;
+            position: relative;
+            padding: 0.1em 0.2em;
+            margin: 0 0 0 0.2em;
+        }
+
+        .checkLabel {
+            margin: 0px 4px;
+            font-size: 0.9em;
+        }
+
+        .tkaddress .search-address-button {
+            padding: 1px 1px 1px 1px;
+            font-size: 0.8em;
+        }
+
+        .comform-title, .itemTitle, .itemInput, .itemInput select, .annot, #form-button button, .proc-step {
+            font-family: "Yu Gothic Medium", meiryo, "MS PGothic", YuGothic, "MS PGothic", "Hiragino Kaku Gothic Pro", sans-serif;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin: 16px 0px 16px 0px;
+        }
+
+        .form-buttons button {
+            font-size: 13px;
+        }
+
+        .form-buttons .return-top {
+            margin: 0 32px 0 0;
+        }
+
+
+        @media print {
+            #save-load-layer {
+                display: none;
+            }
+        }
+
+        .tonput-container{
+            border: 1px solid #AAAAAA;
+            width: 100%;
+        }
+
+        .tonput-flex {
+            margin: 6px;
+            box-sizing: content-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            white-space: nowrap;
+        }
+
+        .tonput-column {
+            width: 200px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .tonput-item {
+            border: 1px solid #AAAAAA;
+            width: 100%;
+        }
+
+        .tonput-item-title {
+            font-size: 0.95em;
+            font-family: -apple-system, BlinkMacSystemFont, monospace;
+            line-height: 1.6;
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tonput {
+            line-height: 1.6em;
+            border: none;
+            width: 80%;
+            padding: 4px;
+            margin: 2px;
+        }
+
+        .tonput-add{
+            padding: 6px;
+            margin: 6px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+
+            let ti = 0;
+
+            let add = function(){
+                $(".tonput-column").each(function(){
+                    let inputEl = $('<div class="tonput-item"><input class="tonput" type="text" tabindex="' + ti + '"></div>');
+                    $(this).append(inputEl);
+                    ti++;
+                });
+            }
+
+            add();
+            add();
+            add();
+
+            $(".tonput-add").click(add);
+        });
+    </script>
+</head>
+<body>
+
+<body id="body">
+
+
+<!--
+<div id="save-load-layer" onmouseover="$('#save-load-buttons').show()" onmouseout="$('#save-load-buttons').hide()">
+    <div id="save-load-title" onclick="toggleSaveLoadButton()">入力内容保存／読込</div>
+    <div id="save-load-message"></div>
+    <div id="save-load-buttons" style="display: none;">
+        <ul>
+            <li>
+                <button type="button" id="buttonLoadEntryData" onclick="loadEntryData('S35153079')">保存したデータ読込</button>
+            </li>
+            <li>
+                <button type="button" onclick="saveEntryData('S35153079')">現在の入力内容を保存</button>
+            </li>
+            <li>
+                <button type="button" onclick="removeEntryData('S35153079')">保存データ削除</button>
+            </li>
+        </ul>
+        <div style="margin: 2px 0px 0px 0px; text-align: center;">保存日：<span id="save-load-date">未保存</span></div>
+    </div>
+</div>
+-->
+
+<div class="comform-wrap">
+
+    <h1 class="comform-title">助監督.com 　登録フォーム</h1>
+
+
+    <form action="/fgen/S35153079/" method="post" onsubmit="return false;" novalidate="novalidate">
+
+        <div class="comform-container">
+            <div class="comform-row">
+                <div class="itemTitle">お名前<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput">姓 <input type="text" name="tkna001-sei" id="tkna001-sei" size="10" value=""
+                                                style="max-width: 5em; margin: 0px 8px 0px 0px;" class="required">
+                    <div style="display: inline-block;">名 <input type="text" name="tkna001-mei" id="tkna001-mei"
+                                                                 size="10" value="" style="max-width: 5em;"
+                                                                 class="required"></div>
+                </div><!-- itemInput --></div><!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">フリガナ<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput">姓 <input type="text" name="tkna004-sei" id="tkna004-sei" size="10" value=""
+                                                style="max-width: 5em; margin: 0px 8px 0px 0px;" class="required">
+                    <div style="display: inline-block;">名 <input type="text" name="tkna004-mei" id="tkna004-mei"
+                                                                 size="10" value="" style="max-width: 5em;"
+                                                                 class="required"></div>
+                </div><!-- itemInput --></div><!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">生まれ<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput">西暦&nbsp;<input type="text" name="date835-year" id="date835-year" size="4"
+                                                      maxlength="4" value="" pattern="[0-9]*"
+                                                      style="ime-mode: disabled;" class="required">&nbsp;年&nbsp;
+                </div><!-- itemInput --></div><!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">電話番号<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput"><input type="text" name="tkph603-1" id="tkph603-1" size="4" maxlength="5"
+                                              pattern="[0-9]*" value="" class="required">&nbsp;-&nbsp;<input type="text"
+                                                                                                             name="tkph603-2"
+                                                                                                             id="tkph603-2"
+                                                                                                             size="4"
+                                                                                                             maxlength="4"
+                                                                                                             pattern="[0-9]*"
+                                                                                                             value=""
+                                                                                                             class="required">&nbsp;-&nbsp;<input
+                        type="text" name="tkph603-3" id="tkph603-3" size="4" maxlength="4" pattern="[0-9]*" value=""
+                        class="required"></div><!-- itemInput --></div><!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">メールアドレス<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput"><input type="email" name="tkem001" id="tkem001" size="30" value=""
+                                              style="width: 100%; max-width:15em;" class="required"><br><input
+                        type="email" name="tkem001-check" id="tkem001-check" size="30" value=""
+                        style="width: 100%; max-width:15em;" class="required"><span class="checkLabel">確認用</span></div>
+                <!-- itemInput --></div><!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">備考（資格、長所など）</div><!-- itemTitle -->
+                <div class="itemInput"><textarea name="text261" id="text261"
+                                                 style="width: 100%; max-width: 20em; height: 8em"></textarea><br><span
+                        class="annot annot-lower">例）帰国子女・英語OK、イタリア留学経験有り、介護資格有り　など</span></div><!-- itemInput --></div>
+            <!-- comform-row -->
+            <div class="comform-row">
+                <div class="itemTitle">作品履歴</div><!-- itemTitle -->
+                <div class="itemInput">
+                    <!--
+                    <span class="annot annot-lower">
+                        下記の順番で作品ごとに記入ください。<br>
+                        ・ジャンル（映画・TV・MV・Vシネ・応援）<br>
+                        ・公開年<br>
+                        ・作品監督<br>
+                        ・作品名<br>
+                        ・役職<br>
+                            <br>
+                    </span>
+                     -->
+                </div><!-- itemInput --></div><!-- comform-row -->
+        </div><!-- comform-container -->
+
+        <div class="tonput-container">
+            <div class="tonput-flex">
+                <div class="tonput-column" style="width: 20%;">
+                    <div class="tonput-item tonput-item-title">ジャンル</div>
+                </div>
+                <div class="tonput-column" style="width: 10%;">
+                    <div class="tonput-item tonput-item-title">公開年</div>
+                </div>
+                <div class="tonput-column" style="width: 20%;">
+                    <div class="tonput-item tonput-item-title">作品監督</div>
+                </div>
+                <div class="tonput-column" style="width: 25%;">
+                    <div class="tonput-item tonput-item-title">作品名</div>
+                </div>
+                <div class="tonput-column" style="width: 25%;">
+                    <div class="tonput-item tonput-item-title">役職</div>
+                </div>
+
+            </div>
+            <button class="tonput-add">+ 作品を追加</button>
+        </div>
+
+
+        <div id="form-button" class="form-buttons">
+            <button type="submit" onkeydown="kc=event.keyCode;if(kc == 13 || kc == 32)goSubmit(this.form);"
+                    onmouseup="goSubmit(this.form);">内容確認画面へ
+            </button>
+            <input type="hidden" name="nextAction" id="nextAction" value="confirm">
+        </div>
+
+        <input type="hidden" name="ID" id="formId" value="S35153079">
+    </form>
+
+
+</div>
+</body>
+
+</body>
+</html>
