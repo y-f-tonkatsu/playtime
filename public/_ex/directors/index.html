@@ -233,7 +233,7 @@
             }
         }
 
-        .tonput-container{
+        .tonput-container {
             border: 1px solid #AAAAAA;
             width: 100%;
         }
@@ -272,35 +272,82 @@
         .tonput {
             line-height: 1.6em;
             border: none;
-            width: 80%;
+            width: 85%;
             padding: 4px;
             margin: 2px;
         }
 
-        .tonput-add{
+        .tonput-add {
             padding: 6px;
             margin: 6px;
         }
+
+        #age {
+            margin-left: 1em;
+        }
+
     </style>
 
     <script>
-        $(function(){
+
+        function getAge(y, m, d) {
+
+            //誕生年月日
+            var birthday = new Date(y, m - 1, d);
+
+            //今日
+            var today = new Date();
+
+            //今年の誕生日
+            var thisYearBirthday =
+                new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate());
+
+            //今年-誕生年
+            var age = today.getFullYear() - birthday.getFullYear();
+
+            //今年の誕生日を迎えていなければage-1を返す
+            return (today < thisYearBirthday) ? age - 1 : age;
+        }
+
+        $(function () {
+
+            $('#input-date').on('input', function () {
+                let dateStr = $('#input-date').val();
+                let year = dateStr.split('-')[0];
+                let month = dateStr.split('-')[1];
+                let day = dateStr.split('-')[2];
+                $('#age').text(getAge(year, month, day));
+            });
 
             let ti = 0;
 
-            let add = function(){
-                $(".tonput-column").each(function(){
+            let add = function () {
+                let i = 0;
+                $(".tonput-column").each(function () {
                     let inputEl = $('<div class="tonput-item"><input class="tonput" type="text" tabindex="' + ti + '"></div>');
+                    if (i == 4) {
+                        inputEl = $('<div class="tonput-item"><select class="tonput" name="example" tabindex="' + ti + '">' +
+                            '<option value="チーフ">チーフ</option>\n' +
+                            '<option value="2nd">2nd</option>\n' +
+                            '<option value="3rd">3rd</option>\n' +
+                            '<option value="4th">4th/見習い</option>\n' +
+                            '</select>' +
+                            '<input class="tonput" type="text" disabled="true" style="visibility: hidden">' +
+                            '</div>');
+                    }
+
                     $(this).append(inputEl);
+                    i++;
                     ti++;
                 });
             }
 
-            add();
-            add();
-            add();
+            for (let i = 0; i < 15; i++) {
+                add();
+            }
 
             $(".tonput-add").click(add);
+
         });
     </script>
 </head>
@@ -355,10 +402,11 @@
                                                                  class="required"></div>
                 </div><!-- itemInput --></div><!-- comform-row -->
             <div class="comform-row">
-                <div class="itemTitle">生まれ<span class="req-mark">必須</span></div><!-- itemTitle -->
-                <div class="itemInput">西暦&nbsp;<input type="text" name="date835-year" id="date835-year" size="4"
-                                                      maxlength="4" value="" pattern="[0-9]*"
-                                                      style="ime-mode: disabled;" class="required">&nbsp;年&nbsp;
+                <div class="itemTitle">生年月日<span class="req-mark">必須</span></div><!-- itemTitle -->
+                <div class="itemInput">
+                    西暦&nbsp;<input id="input-date" type="date" name="date835-year" id="date835-year" class="required">
+                    <sapn id="age">-</sapn>
+                    歳
                 </div><!-- itemInput --></div><!-- comform-row -->
             <div class="comform-row">
                 <div class="itemTitle">電話番号<span class="req-mark">必須</span></div><!-- itemTitle -->
@@ -387,7 +435,8 @@
                         class="annot annot-lower">例）帰国子女・英語OK、イタリア留学経験有り、介護資格有り　など</span></div><!-- itemInput --></div>
             <!-- comform-row -->
             <div class="comform-row">
-                <div class="itemTitle">作品履歴</div><!-- itemTitle -->
+                <div class="itemTitle">作品経歴<span class="req-mark">必須</span> <br><span
+                        class="req-mark">なるだけ詳細にお願いします</span></div><!-- itemTitle -->
                 <div class="itemInput">
                     <!--
                     <span class="annot annot-lower">
@@ -414,10 +463,10 @@
                 <div class="tonput-column" style="width: 20%;">
                     <div class="tonput-item tonput-item-title">作品監督</div>
                 </div>
-                <div class="tonput-column" style="width: 25%;">
+                <div class="tonput-column" style="width: 30%;">
                     <div class="tonput-item tonput-item-title">作品名</div>
                 </div>
-                <div class="tonput-column" style="width: 25%;">
+                <div class="tonput-column" style="width: 20%;">
                     <div class="tonput-item tonput-item-title">役職</div>
                 </div>
 
