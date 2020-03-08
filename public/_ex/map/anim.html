@@ -26,11 +26,8 @@
             var comp = AdobeAn.getComposition("7B2400F53A6AB14C9A1CFC850596DC9F");
             var lib = comp.getLibrary();
             var loader = new createjs.LoadQueue(false);
-            loader.addEventListener("progress", function (evt) {
-                $("#load").text("読込中" + evt.progress);
-                handleFileLoad(evt, comp)
-            });
             loader.addEventListener("fileload", function (evt) {
+                $("#load").text("読込中" + Math.floor(loader.progress * 100) + "%");
                 handleFileLoad(evt, comp)
             });
             loader.addEventListener("complete", function (evt) {
