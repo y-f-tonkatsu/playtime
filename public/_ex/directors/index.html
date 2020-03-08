@@ -312,6 +312,7 @@
 
         $(function () {
 
+            /*
             $(".datepicker").datepicker();
 
             $('.datepicker').on('change', function () {
@@ -321,6 +322,8 @@
                 let day = dateStr.split('/')[2];
                 $('#age').text(getAge(year, month, day));
             });
+
+             */
 
             let ti = 0;
 
@@ -423,8 +426,8 @@
             <div class="comform-row">
                 <div class="itemTitle">生年月日<span class="req-mark">必須</span></div><!-- itemTitle -->
                 <div class="itemInput">
-                    <input type="text" class="datepicker">
-                    <!--<input id="input-date" type="date" name="date835-year" id="date835-year" class="required">-->
+                    <!--<input type="text" class="datepicker">-->
+                    <input id="input-date" type="date" name="date835-year" id="date835-year" class="required">
                     <sapn id="age">-</sapn>
                     歳
                 </div><!-- itemInput --></div><!-- comform-row -->
