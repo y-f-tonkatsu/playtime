@@ -325,7 +325,21 @@
                 let i = 0;
                 $(".tonput-column").each(function () {
                     let inputEl = $('<div class="tonput-item"><input class="tonput" type="text" tabindex="' + ti + '"></div>');
-                    if (i == 4) {
+                    if (i == 0) {
+                        inputEl = $('<div class="tonput-item"><select class="tonput" name="example" tabindex="' + ti + '">' +
+                            '<option value="映画">映画</option>\n' +
+                            '<option value="TV">TV</option>\n' +
+                            '<option value="Netflix">Netflix</option>\n' +
+                            '<option value="Amazon">Amaszon</option>\n' +
+                            '<option value="WOWOW">WOWOW</option>\n' +
+                            '<option value="Vシネマ">Vシネマ</option>\n' +
+                            '<option value="現場応援">現場応援</option>\n' +
+                            '<option value="その他">その他</option>\n' +
+                            '</select>' +
+                            '<input class="tonput" type="text" disabled="true" style="visibility: hidden">' +
+                            '</div>');
+
+                    } else if (i == 4) {
                         inputEl = $('<div class="tonput-item"><select class="tonput" name="example" tabindex="' + ti + '">' +
                             '<option value="チーフ">チーフ</option>\n' +
                             '<option value="2nd">2nd</option>\n' +
@@ -404,7 +418,7 @@
             <div class="comform-row">
                 <div class="itemTitle">生年月日<span class="req-mark">必須</span></div><!-- itemTitle -->
                 <div class="itemInput">
-                    西暦&nbsp;<input id="input-date" type="date" name="date835-year" id="date835-year" class="required">
+                    <input id="input-date" type="date" name="date835-year" id="date835-year" class="required">
                     <sapn id="age">-</sapn>
                     歳
                 </div><!-- itemInput --></div><!-- comform-row -->
