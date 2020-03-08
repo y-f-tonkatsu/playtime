@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css">
 
     <style>
         body {
@@ -288,6 +285,10 @@
 
     </style>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+
     <script>
 
         function getAge(y, m, d) {
@@ -311,11 +312,13 @@
 
         $(function () {
 
-            $('#input-date').on('input', function () {
-                let dateStr = $('#input-date').val();
-                let year = dateStr.split('-')[0];
-                let month = dateStr.split('-')[1];
-                let day = dateStr.split('-')[2];
+            $(".datepicker").datepicker();
+
+            $('.datepicker').on('change', function () {
+                let dateStr = $('.datepicker').val();
+                let year = dateStr.split('/')[0];
+                let month = dateStr.split('/')[1];
+                let day = dateStr.split('/')[2];
                 $('#age').text(getAge(year, month, day));
             });
 
@@ -365,6 +368,7 @@
 
         });
     </script>
+
 </head>
 <body>
 
@@ -419,7 +423,8 @@
             <div class="comform-row">
                 <div class="itemTitle">生年月日<span class="req-mark">必須</span></div><!-- itemTitle -->
                 <div class="itemInput">
-                    <input id="input-date" type="date" name="date835-year" id="date835-year" class="required">
+                    <input type="text" class="datepicker">
+                    <!--<input id="input-date" type="date" name="date835-year" id="date835-year" class="required">-->
                     <sapn id="age">-</sapn>
                     歳
                 </div><!-- itemInput --></div><!-- comform-row -->
