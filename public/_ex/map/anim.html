@@ -44,6 +44,7 @@
         }
 
         function handleComplete(evt, comp) {
+            $("#load").hide();
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
             var lib = comp.getLibrary();
             var ss = comp.getSpriteSheet();
@@ -93,6 +94,7 @@
 </head>
 <body onload="init();" style="margin:0px;">
 <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1200px; height:800px">
+    <div id="load">読込中..</div>
     <canvas id="canvas" width="1200" height="800"
             style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
     <div id="dom_overlay_container"
