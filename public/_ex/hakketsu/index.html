@@ -73,9 +73,6 @@
 
         $(function(){
             reset();
-            $("body").click(function(){
-                $(window).off("resize");
-            });
             $(window).on("resize", reset);
         });
 
