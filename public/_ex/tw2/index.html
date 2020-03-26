@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ツイート</title>
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        #root{
+            width: 100%;
+            height: 100%;
+        }
+
+        .header{
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+        }
+
+        .footer{
+            position: fixed;
+            top: 85%;
+            left:0;
+            width: 100%;
+        }
+
+        .menu {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        .main {
+            width: 100%;
+            overflow-y: scroll;
+        }
+    </style>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type="application/javascript">
+        $(function () {
+
+        });
+    </script>
+</head>
+<body>
+
+<div id="root">
+    <img class="header" src="img/header.png">
+    <div class="container">
+        <img class="main" src="img/main.png">
+    </div>
+    <img class="footer" src="img/footer.png">
+</div>
+
+</body>
+</html>
