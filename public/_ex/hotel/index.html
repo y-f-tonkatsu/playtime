@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>諏訪のペンション検索</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <script src="jquery-3.4.1.slim.min.js"></script>
+
+    <style>
+        body {
+            background: red;
+        }
+
+        .main {
+            position: fixed;
+            height: 100%;
+
+        }
+
+        .list {
+            z-index: 10;
+            position: fixed;
+            overflow-y: scroll;
+        }
+
+        .base {
+            z-index: 1;
+        }
+
+        .icons {
+            z-index: 2;
+        }
+
+        .f {
+            z-index: 3;
+        }
+
+        .top {
+            z-index: 10;
+        }
+
+        .item {
+            width: 100%;
+        }
+
+        .pop {
+            background: black;
+            z-index: 20;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .popimg{
+            display: block;
+            position: relative;
+            height: 70%;
+            margin: 80px auto;
+        }
+
+        .close{
+            display: block;
+            position: fixed;
+            width: 14px;
+            height: 14px;
+            right: 16px;
+            top: 16px;
+        }
+
+        .prev{
+            display: block;
+            position: fixed;
+            width: 53px;
+            height: 53px;
+            left: 16px;
+            top: 49%;
+        }
+
+        .next{
+            display: block;
+            position: fixed;
+            width: 53px;
+            height: 53px;
+            right: 16px;
+            top: 49%;
+        }
+
+    </style>
+
+    <script>
+        $(function () {
+
+            $(".f").hide();
+            $(".pop").hide();
+
+            let w = $(".base").width();
+            let h = $(".base").height();
+
+            $(".list").css({
+                width: w * 0.315,
+                height: h * 0.59,
+                left: w * 0.07,
+                top: h * 0.39,
+            });
+
+            $(".item").click(function () {
+                let src = "img/b" + $(this).attr("data-i") + ".jpg";
+                $(".popimg").attr("src", src).show();
+                $(".pop").show();
+            });
+
+            $(".item").hover(function () {
+                let src = "img/f" + $(this).attr("data-i") + ".png";
+                $(".f").attr('src', src)
+                    .show();
+            }, function () {
+                $(".f").hide();
+            });
+
+            $(".pop").click(function () {
+                $(".pop").hide();
+                $(".popimg").hide();
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+<img class="main base" src="img/base.png">
+<img class="main icons" src="img/icons.png">
+<img class="main top" src="img/top.png">
+
+<img class="main f" src="img/f01.png">
+<img class="main f" src="img/f02.png">
+
+<div class="list">
+    <img class="item" src="img/i01.png" data-i="01">
+    <img class="item" src="img/i02.png" data-i="02">
+</div>
+
+<div class="pop">
+    <img class="close" src="img/close.png">
+    <img class="prev" src="img/prev.png">
+    <img class="next" src="img/next.png">
+    <img class="popimg">
+</div>
+
+</body>
+</html>
