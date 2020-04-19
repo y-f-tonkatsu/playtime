@@ -103,6 +103,7 @@
             });
 
             $(".item").click(function () {
+                $(".popimg").attr("src", '').show();
                 let src = "img/b" + $(this).attr("data-i") + ".jpg";
                 $(".popimg").attr("src", src).show();
                 $(".pop").show();
