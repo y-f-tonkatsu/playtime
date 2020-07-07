@@ -1,0 +1,15 @@
+
+.clicker, .clicker:focus {
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+.img--main{
+    display: block;
+    width: 100%;
+}
