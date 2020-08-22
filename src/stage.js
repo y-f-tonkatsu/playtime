@@ -76,7 +76,9 @@ class Stage extends React.Component {
                     src={Util.getImagePath(this.state.work)}
                 />
                 <p className={style.stageDescription}>
-                    {unescape(this.state.work.description)}
+                    {this.state.work.description.split('\n').map(str => {
+                        return(<br/>)
+                    })}
                 </p>
 
             </article>);
