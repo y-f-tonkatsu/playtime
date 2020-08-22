@@ -47,7 +47,7 @@
     font-size: 1rem;
     text-align: center;
     z-index: 210;
-    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .stageTitle {
