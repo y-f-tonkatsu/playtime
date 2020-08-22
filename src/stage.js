@@ -76,7 +76,7 @@ class Stage extends React.Component {
                     src={Util.getImagePath(this.state.work)}
                 />
                 <p className={style.stageDescription}>
-                    {this.state.work.description}
+                    {unescape(this.state.work.description)}
                 </p>
 
             </article>);
