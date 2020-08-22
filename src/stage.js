@@ -78,6 +78,7 @@ class Stage extends React.Component {
                 <p className={style.stageDescription}>
                     {
                         this.state.work.description.split('\n').map(str => {
+                            console.log("unko");
                             return(<p>{str}</p>)
                         })
                     }
