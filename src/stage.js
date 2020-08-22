@@ -77,7 +77,7 @@ class Stage extends React.Component {
                 />
                 <p className={style.stageDescription}>
                     {this.state.work.description.split('\n').map(str => {
-                        return(<br/>)
+                        return({str} + <br/>)
                     })}
                 </p>
 
