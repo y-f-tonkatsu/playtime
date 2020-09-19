@@ -29,29 +29,12 @@
         $(function () {
             let w = $(".main").width();
             let h = $(".main").height();
+
             $(".tf").css({
                 width: w * 0.35,
                 height: h * 0.05,
-                left: w * 0.337,
-                top: h * 0.458,
-            });
-
-
-            function next(){
-                window.location = "index2.html";
-            }
-
-            $(".main").click(function(){
-               next();
-            });
-
-            $(window).on("keypress", function (e) {
-
-                let keycode = (event.keyCode ? event.keyCode : event.which);
-                if (keycode == '13') {
-                    next();
-                }
-
+                left: w * 0.128,
+                top: h * 0.045,
             });
 
         })
@@ -59,8 +42,8 @@
     </script>
 </head>
 <body>
-<img class="main" src="img/kensaku_01.png">
-<input type="text" class="tf">
+<img class="main" src="img/kensaku_02.png">
+<input type="text" class="tf" value="童貞　魔法使い">
 
 </body>
 </html>
