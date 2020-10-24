@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>純米原酒 池池</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <style>
+        img{
+            cursor: pointer;
+            margin: auto;
+            display: block;
+        }
+    </style>
+
+    <script>
+        $(function(){
+           $(".img--main").click(function(){
+               $(".img--main").attr("src", "img/img2.png");
+           }) ;
+        });
+    </script>
+
+</head>
+<body>
+    <img class="img--main" src="img/img1.png">
+</body>
+</html>
