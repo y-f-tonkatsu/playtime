@@ -1,0 +1,151 @@
+
+select {
+    font-size: 2vh;
+}
+
+body {
+    font-size: 2vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #c0f0ac;
+}
+
+header {
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    height: 6%;
+    background: #33B600;
+    color: #EEEEEE;
+}
+
+.cont {
+    margin: 1vw;
+    display: flex;
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.col {
+    width: 50%;
+    height: 100%;
+}
+
+.full {
+    text-align: right;
+    display: block;
+    margin-right: 9vw;
+}
+
+.full input, .full textarea {
+    display: inline-block;
+    width: 31vw;
+    vertical-align: top;
+}
+
+.half {
+    text-align: right;
+    display: inline-block;
+    width: 20vw;
+}
+
+.half select {
+    width: 10.4vw;
+}
+
+.halfL {
+    text-align: left;
+    display: inline-block;
+    width: 20vw;
+}
+
+p {
+    margin: 0.1em 0.1em;
+}
+
+textarea {
+    height: 24vh;
+    overflow-y: scroll;
+}
+
+input {
+    width: 10vw;
+}
+
+td input {
+    margin-left: 0.5vw;
+    width: 4vw;
+}
+
+td .his_input {
+    margin: 0;
+    text-align: center;
+    font-size:2vh;
+    background: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+td .his_input:focus {
+    outline: none;
+}
+
+
+td {
+    text-align: center;
+    width: 8vw;
+    vertical-align: middle;
+}
+
+td:first-child {
+    text-align: right;
+}
+
+td:nth-child(4) {
+    width: 12vw;
+}
+
+
+th {
+    text-align: center;
+    background: #c0f0ac;
+}
+
+tr:nth-child(odd) {
+    background: #effae0;
+}
+
+tr:nth-child(even) {
+    background: #dfffcc;
+}
+
+td {
+    padding: 0.5vw;
+}
+
+.table-wrap {
+    overflow-y: scroll;
+    height: 30vh;
+    border: solid;
+    width: 40vw;
+}
+
+.history {
+    margin-top: 20vh;
+}
+
+.inkan-wrap{
+    position: absolute;
+    text-align: center;
+    padding-top: 10vh;
+    z-index: 100;
+}
+
+.inkan {
+    width: 80%;
+}

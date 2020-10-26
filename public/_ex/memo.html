@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <style>
-
+        /** 入力欄 **/
         input, input:focus {
             background: none;
             border: none;
@@ -19,6 +19,17 @@
 
     </style>
 
+    <script>
+        /** イメージ差し替え **/
+        $(function(){
+            $(".img--main").click(function(){
+                $(".img--main")
+                    .attr("src", "img/img2.png")
+                $(window).scrollTop(0);
+            }) ;
+
+        });
+    </script>
 
 </head>
 <body>
