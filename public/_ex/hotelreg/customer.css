@@ -21,8 +21,8 @@ header {
     font-size: 1.4em;
     width: 100%;
     height: 10%;
-    background: #ffd650;
-    color: #333333;
+    background: #454555;
+    color: #EEEEEE;
     font-weight: bold;
 }
 
@@ -128,11 +128,11 @@ th {
 }
 
 tr:nth-child(odd) {
-    background: #c0c0c0;
+    background: #eeeeee;
 }
 
 tr:nth-child(even) {
-    background: #a0a0a0;
+    background: #e5e5e5;
 }
 
 td {
