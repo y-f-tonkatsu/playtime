@@ -28,9 +28,6 @@
             height: 4%;
         }
 
-        .cont {
-            width: 100%;
-        }
 
         img {
             cursor: pointer;
@@ -43,15 +40,20 @@
     <script>
         $(function () {
 
-            $(".img--main").click(function () {
-                $(".tf").hide();
-                $(".img--main")
-                    .attr("src", "img/img2.png")
-                $(window).scrollTop(0);
+            $(".tf").on("change", function(){
+
                 $(".img--main").click(function () {
-                    window.location.href = 'index2.html';
+                    $(".tf").hide();
+                    $(".img--main")
+                        .attr("src", "img/img2.png")
+                    $(window).scrollTop(0);
+                    $(".img--main").click(function () {
+                        window.location.href = 'index2.html';
+                    });
                 });
-            });
+
+            })
+
 
         });
     </script>
