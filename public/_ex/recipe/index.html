@@ -22,12 +22,11 @@
 
         .tf {
             font-size: 2em;
-            left: 7%;
-            top: 35.5%;
-            width: 80%;
-            height: 4%;
         }
 
+        .cont {
+            width: 100%;
+        }
 
         img {
             cursor: pointer;
@@ -39,20 +38,24 @@
 
     <script>
         $(function () {
+            let w = $(".img--main").width();
+            let h = $(".img--main").height();
+            $(".tf").css({
+                left: w * 0.07,
+                top: h * 0.355,
+                width: w * 0.8,
+                height: h * 0.04,
+            });
 
-            $(".tf").on("change", function(){
-
+            $(".img--main").click(function () {
+                $(".tf").hide();
+                $(".img--main")
+                    .attr("src", "img/img2.png")
+                $(window).scrollTop(0);
                 $(".img--main").click(function () {
-                    $(".tf").hide();
-                    $(".img--main")
-                        .attr("src", "img/img2.png")
-                    $(".img--main").click(function () {
-                        window.location.href = 'index2.html';
-                    });
+                    window.location.href = 'index2.html';
                 });
-
-            })
-
+            });
 
         });
     </script>
@@ -61,7 +64,6 @@
 <body>
 
 <img class="img--main" src="img/img1.png">
-<input type="text" class="tf">
 
 </body>
 </html>
