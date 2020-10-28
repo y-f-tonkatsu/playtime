@@ -5,6 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <style>
+
         /** 入力欄 **/
         input, input:focus {
             background: none;
@@ -16,10 +17,19 @@
             font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
+        .tf{
+            border: solid red;
+            left: 9vw;
+            top: 30vh;
+            width: 50vw;
+            height: 10vh;
+        }
+        /** -- **/
 
     </style>
 
     <script>
+
         /** イメージ差し替え **/
         $(function(){
             $(".img--main").click(function(){
@@ -33,6 +43,8 @@
 
 </head>
 <body>
+    <!-- 入力欄  -->
+    <input type="text" class="tf">
 
 </body>
 </html>
