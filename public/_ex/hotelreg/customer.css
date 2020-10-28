@@ -13,7 +13,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: #c0f0ac;
+    background: #dddddd;
 }
 
 header {
@@ -21,8 +21,9 @@ header {
     font-size: 1.4em;
     width: 100%;
     height: 10%;
-    background: #229600;
+    background: #99f040;
     color: #EEEEEE;
+    font-weight: bold;
 }
 
 .cont {
