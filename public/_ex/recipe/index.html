@@ -47,15 +47,19 @@
                 height: h * 0.04,
             });
 
-            $(".img--main").click(function () {
-                $(".tf").hide();
-                $(".img--main")
-                    .attr("src", "img/img2.png")
-                $(window).scrollTop(0);
+            $(".tf").click(function () {
                 $(".img--main").click(function () {
-                    window.location.href = 'index2.html';
+                    $(".tf").hide();
+                    $(".img--main")
+                        .attr("src", "img/img2.png")
+                    $(window).scrollTop(0);
+                    $(".img--main").click(function () {
+                        window.location.href = 'index2.html';
+                    });
                 });
-            });
+
+            })
+
 
         });
     </script>
