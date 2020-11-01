@@ -27,6 +27,7 @@ header {
 }
 
 .cont {
+    margin-left: 2em;
     display: flex;
     position: relative;
     left: 0;
@@ -43,7 +44,7 @@ header {
 .full {
     text-align: right;
     display: block;
-    margin-right: 9vw;
+    margin-right: 10.8vw;
     margin-top: 0.5em;
 }
 
@@ -56,13 +57,13 @@ header {
 .half {
     text-align: right;
     display: inline-block;
-    width: 20vw;
+    width: 24vw;
     overflow-y: visible;
     margin-top: 0.5em;
 }
 
 .half select {
-    width: 10.4vw;
+    width: 16vw;
 }
 
 .halfL {
@@ -81,7 +82,7 @@ textarea {
 }
 
 input {
-    width: 10vw;
+    width: 16vw;
     overflow-y: visible;
     border-radius: 6px;
 }
