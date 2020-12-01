@@ -4,7 +4,7 @@
 
 
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>一年が経ちました</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 
     <style>
@@ -36,16 +36,10 @@
 
         #tf{
             left: 11%;
-            width: 84vw;
-            font-size: 28pt;
-            height: 6vh;
-        }
-        #tf2{
-            vertical-align: top;
-            left: 11%;
-            width: 78vw;
-            font-size: 28pt;
-            height: 18vh;
+            width: 78%;
+            font-size: 20pt;
+            height: 300px;
+            top: 4380px;
         }
 
         .main {
@@ -61,35 +55,13 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"> </script>
 
-    <script>
-        function reset(){
-            $("#tf").css({
-                "top": $("#m1").position().top
-            });
-            $("#tf2").css({
-                "top": $("#m2").position().top
-            });
-        }
-
-        $(function(){
-            reset();
-            $(window).on("resize", reset);
-        });
-
-    </script>
-
 </head>
 <body>
 <div id="wrap">
-    <img class="main" src="img/blog_0_0.png">
-    <img class="main" id="m1" src="img/blog_0_1.png">
-    <img class="main" src="img/blog_0_2.png">
-    <img class="main" id="m2" src="img/blog_0_3.png">
-    <img class="main" src="img/blog_0_4.png">
+    <img class="main" src="img/blog_0.png">
 </div>
 
-<input id="tf" type="text">
-<textarea id="tf2" type="text"></textarea>
+<textarea id="tf" type="text"></textarea>
 
 
 </body>
