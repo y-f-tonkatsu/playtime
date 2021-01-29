@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="full-img.css">
+
+    <style>
+        input, input:focus {
+            background: none;
+            border: none;
+            outline: none;
+            display: block;
+            position: absolute;
+            z-index: 100;
+            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 50vh;
+            z-index: 100;
+            width: 100vw;
+            height: 50vh;
+        }
+
+        .text1 {
+            top: 36.2vh;
+            left : 11vw;
+            width: 80vw;
+            height: 4vh;
+            font-size: 2vh;
+        }
+        .text2 {
+            top: 45.4vh;
+            left : 11vw;
+            width: 80vw;
+            height: 4vh;
+            font-size: 2vh;
+        }
+    </style>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type="application/javascript">
+        $(function () {
+
+            var flag = false;
+            $("#goto2").on("click", function () {
+                $(".main").attr("src", flag ? "img/t01.png" : "img/t02.png");
+                flag = !flag;
+                if(flag){
+                    $("input").hide();
+                } else {
+                    $("input").show();
+                }
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+<img src="img/t01.png" class="main full"/>
+
+<div id="goto2" class="overlay"></div>
+
+<input class="text1" type="text"/>
+<input class="text2" type="text"/>
+
+</body>
+</html>
