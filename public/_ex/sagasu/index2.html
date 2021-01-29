@@ -15,7 +15,7 @@
     <style>
         input, input:focus {
             background: none;
-            border: none;
+            border: solid;
             outline: none;
             display: block;
             position: absolute;
@@ -52,6 +52,8 @@
 
                 $(".main").attr("src", "img/u02.png");
                 $(".main").on("click", function(){
+                    if($("input").val() == "") return;
+                    $(".main").off("click");
                     $("input").hide();
                     $(".main").attr("src", "img/u03.png");
                     setTimeout(function(){
