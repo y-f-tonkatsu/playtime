@@ -80,7 +80,7 @@
                 if($(".text2").val() == "") return;
                 flag = true;
                 $(".main").attr("src", "img/t0" + no + ".png");
-                no++;
+                if (no < 6) no++;
             });
 
         });
