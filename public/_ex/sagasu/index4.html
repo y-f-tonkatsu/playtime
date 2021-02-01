@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="full-img.css">
 
     <style>
-        body{
-            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-        }
-
         .test{
             background: rgba(255, 0, 0, 0.2);
         }
@@ -31,36 +27,27 @@
         }
 
         input, input:focus {
+            font-size: 3vw;
             background: none;
             border: none;
             outline: none;
             display: block;
             position: absolute;
             z-index: 100;
+            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
         }
 
         .text1 {
-            font-size: 5.4vw;
-            top: 34.6%;
-            left : 11%;
-            width: 80%;
-            height: 3%;
-        }
-        .text2 {
-            font-size: 5.4vw;
-            top: 44.4%;
-            left : 11%;
-            width: 80%;
-            height: 3%;
-        }
-
-        .text3 {
-            top: 93.3%;
+            top: 92.9%;
             left : 17%;
             width: 66%;
             height: 3.2%;
-            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
-            font-size: 3.5vw;
+        }
+        .text2 {
+            top: 45.0%;
+            left : 11%;
+            width: 80%;
+            height: 3%;
         }
 
         .overlay {
@@ -76,31 +63,24 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            //$(".text3").hide();
+            $("input").hide();
 
-            var flag = false;
-
-            $(".main").on("load", function(){
-                if(flag){
-                    $(".text1").hide();
-                    $(".text2").hide();
-                } else {
-                    $(".text1").show();
-                    $(".text2").show();
-                }
-            });
-
-            var no = 4;
             $(".main").on("click", function () {
-                if($(".text1").val() == "") return;
-                if($(".text2").val() == "") return;
-                flag = true;
-                if(no == 5){
-                    $(".text3").show();
-                }
-                $(".text3").val("");
-                $(".main").attr("src", "img/t0" + no + ".png");
-                if (no < 7) no++;
+                $(".main").off("click");
+
+                $(".main").attr("src", "img/u02.png");
+                $(".main").on("click", function(){
+                    if($("input").val() == "") return;
+                    $(".main").off("click");
+                    $("input").hide();
+                    $(".main").attr("src", "img/u03.png");
+                    setTimeout(function(){
+                        $(".main").attr("src", "img/u04.png");
+                    }, 10000);
+                });
+
+                $("input").show();
+
             });
 
         });
@@ -110,11 +90,8 @@
 <body>
 
 <div class="container">
-    <img src="img/t01.png" class="main full"/>
-
+    <img src="img/u01.png" class="main full"/>
     <input class="text1" type="text"/>
-    <input class="text2" type="text"/>
-    <input class="text3" type="text"/>
 </div>
 
 </body>
