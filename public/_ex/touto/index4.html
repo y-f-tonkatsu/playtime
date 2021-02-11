@@ -22,7 +22,7 @@
         }
 
         .full {
-            margin: auto;
+            width: 100%;
         }
 
         .container {
@@ -68,14 +68,19 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-
+            var no = 1;
+            $("#main").on("click", function(){
+                if(no == 3) return;
+                no++;
+                $("#main").attr("src", "b0" + no + ".png")
+            });
         });
     </script>
 
 </head>
 <body>
 <div class="container">
-    <img src="a03.png" class="full">
+    <img id="main" src="b01.png" class="full">
 </div>
 </body>
 </html>
