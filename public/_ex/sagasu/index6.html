@@ -83,13 +83,17 @@
             $(".video").hide();
             $("#goto3").hide();
 
+
             var next = function () {
                 if (no == 4) return;
 
+                $(".main").on("load", function(){
+                    $(".text1").hide();
+                });
+
                 $("#goto3").show();
                 no++;
-                console.log(no);
-                $(".text1").hide();
+
                 $(".main").attr("src", "img/s0" + no + ".png");
                 if (no == 4) {
                     $(".video").show().get(0).play();
