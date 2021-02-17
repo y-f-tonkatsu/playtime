@@ -96,7 +96,7 @@
 
                 $(".main").attr("src", "img/s0" + no + ".png");
                 if (no == 4) {
-                    $(".video").show().get(0).play();
+                    $(".video").show();
                     $("#goto2").hide();
                     $("#goto3").hide();
                 }
@@ -118,7 +118,7 @@
 
     <input class="text1" type="text"/>
 
-    <video class="video" src="img/video.mp4" autoplay controls></video>
+    <video class="video" src="img/video.mp4" controls></video>
 </div>
 <div id="goto2" class="overlay"></div>
 <div id="goto3" class="overlay2"></div>
