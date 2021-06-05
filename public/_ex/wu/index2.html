@@ -36,25 +36,25 @@
         }
 
         .text1 {
-            top: 45.4%;
-            left : 19%;
-            width: 71%;
-            height: 3%;
+            top: 96.5vw;
+            left : 19vw;
+            width: 71vw;
+            height: 10vw;
         }
         .text2 {
-            top: 45.0%;
-            left : 11%;
-            width: 80%;
-            height: 3%;
+            top: 65.0vw;
+            left : 11vw;
+            width: 80vw;
+            height: 10vw;
         }
 
         .overlay {
             position: absolute;
             left: 0;
-            top: 30%;
+            top: 50vw;
             z-index: 100;
-            width: 17%;
-            height: 50%;
+            width: 17vw;
+            height: 80vw;
         }
     </style>
 
@@ -63,7 +63,7 @@
         $(function () {
             $(".overlay").click(function(){
                 $(".img1").on("load", function(){
-                    $(".text1").css("top", "6.5%");
+                    $(".text1").css("top", "12vw");
                 }).attr("src", "5a2.png");
 
             });
