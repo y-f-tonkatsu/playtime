@@ -70,13 +70,17 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            setTimeout(function () {
-                $(".img2").attr("src", "5102.png");
+            $(".img1").on("load", function(){
                 setTimeout(function () {
-                    $(".img2").attr("src", "5103.png");
+                    $(".img2").attr("src", "5102.png");
+                    setTimeout(function () {
+                        $(".img2").attr("src", "5103.png");
+                    }, 5000);
+
                 }, 5000);
 
-            }, 5000);
+            });
+
         });
     </script>
 
