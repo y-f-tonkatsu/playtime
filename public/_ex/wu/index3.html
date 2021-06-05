@@ -36,7 +36,7 @@
         }
 
         .text1 {
-            top: 12vw;
+            top: 96.5vw;
             left : 19vw;
             width: 71vw;
             height: 10vw;
@@ -51,24 +51,35 @@
         .overlay {
             position: absolute;
             left: 0;
-            top: 30%;
+            top: 50vw;
             z-index: 100;
-            width: 17%;
-            height: 50%;
+            width: 17vw;
+            height: 80vw;
         }
     </style>
 
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            $(".text1").val("浮気 バレた");
-            $(".img1").click(function(){
+            $(".overlay").click(function(){
                 $(".img1").on("load", function(){
-                    $(".text1").val("couplenote.jp").css({
-                        "top": "9vw",
-                        "font-size": "4vw",
+
+                    $(".text1").css({
+                        "top": "12vw",
                     });
-                }).attr("src", "5b3.png");
+
+                    $(".img1").off().click(function(){
+                        $(".img1").on("load", function(){
+                            $(".text1").val("couplenote.jp").css({
+                                "top": "9vw",
+                                "font-size": "4vw",
+                            });
+                        }).attr("src", "5b3.png");
+                    });
+
+                }).attr("src", "5b2.png");
+
+
 
             });
         });
@@ -76,7 +87,7 @@
 
 </head>
 <body>
-    <img src="5b2.png" class="full img1" />
+    <img src="5b1.png" class="full img1" />
     <input class="text1" />
     <div class="overlay"></div>
 </body>
