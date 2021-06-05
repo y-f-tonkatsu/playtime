@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
 
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="reset.css">
 
     <style>
-        .test{
+        .test {
             background: rgba(255, 0, 0, 0.2);
         }
 
@@ -19,7 +20,7 @@
             width: 100%;
         }
 
-        .container{
+        .container {
             width: 100%;
             position: absolute;
         }
@@ -32,18 +33,19 @@
             display: block;
             position: absolute;
             z-index: 100;
-            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
         .text1 {
             top: 12vw;
-            left : 19vw;
+            left: 19vw;
             width: 71vw;
             height: 10vw;
         }
+
         .text2 {
             top: 45.0%;
-            left : 11%;
+            left: 11%;
             width: 80%;
             height: 3%;
         }
@@ -56,15 +58,22 @@
             width: 17%;
             height: 50%;
         }
+
+        .img2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
     </style>
 
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            setTimeout(function(){
-                $("img").attr("src", "4102.png");
-                setTimeout(function(){
-                    $("img").attr("src", "4103.png");
+            setTimeout(function () {
+                $(".img2").attr("src", "5102.png");
+                setTimeout(function () {
+                    $(".img2").attr("src", "5103.png");
                 }, 5000);
 
             }, 5000);
@@ -73,6 +82,8 @@
 
 </head>
 <body>
-    <img src="4101.png" class="full img1" />
+
+<img src="5100.png" class="full img1"/>
+<img src="5101.png" class="full img2"/>
 </body>
 </html>
