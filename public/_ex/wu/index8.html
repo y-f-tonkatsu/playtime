@@ -91,6 +91,8 @@
 
             $(".img1").attr("src", "s1.png").on("load", function () {
 
+                $(".img1").off();
+
                 let h = 0;
                 $("textArea").on("change keyup keydown", function () {
                     if ($(this).length === 0) return;
