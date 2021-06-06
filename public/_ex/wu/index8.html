@@ -100,12 +100,9 @@
                 $(".img1").off();
 
                 let h = 0;
-                $("textArea").on("change keyup keydown", function () {
-                    $("textarea").attr("rows", 1).on("input", e => {
-                        $(e.target).height(0).innerHeight(e.target.scrollHeight);
-                    });
-                    $(".bg").height($(this).height() + 70);
-                    h = $(this).height();
+                $("textarea").attr("rows", 1).on("input change keyup keydown", e => {
+                    $(e.target).height(0).innerHeight(e.target.scrollHeight);
+                    $(".bg").height($(e.target).height() + 70);
                 });
 
                 $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
