@@ -24,6 +24,11 @@
             position: absolute;
         }
 
+        img{
+            position: fixed;
+            top: 0;
+        }
+
         input, input:focus {
             font-size: 5.5vw;
             background: none;
@@ -64,6 +69,7 @@
             $(".overlay").click(function(){
                 $(".img1").on("load", function(){
 
+
                     $(".text1").css({
                         "top": "12vw",
                     });
@@ -72,6 +78,7 @@
                     $(".img1").off().click(function(){
                         $(".img1").on("load", function(){
                             $(".text1").remove();
+
                         }).attr("src", "5b3.png");
                     });
 
