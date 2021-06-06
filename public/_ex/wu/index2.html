@@ -64,6 +64,9 @@
             $(".overlay").click(function(){
                 $(".img1").on("load", function(){
                     $(".text1").css("top", "12vw");
+                    $(".img1").click(function(){
+                        window.location.reload();
+                    });
                 }).attr("src", "5a2.png");
 
             });
