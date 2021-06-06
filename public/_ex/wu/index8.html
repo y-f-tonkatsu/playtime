@@ -115,9 +115,9 @@
 
                 $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
 
+                $("textArea").trigger("change");
                 $("textArea").get(0).focus();
                 $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
-                $("textArea").trigger("change");
 
                 let i = 1;
                 $(".overlay").click(function () {
