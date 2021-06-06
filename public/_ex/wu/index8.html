@@ -122,7 +122,7 @@
                     $(".img1").on("load", function () {
                         $(".text1").val("");
                         $("textArea").trigger("change");
-                        $("textArea").focus();
+                        if (i==3) $("textArea").focus();
                     }).attr("src", file);
 
                     setTimeout(function () {
