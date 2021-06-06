@@ -74,11 +74,13 @@
                         "top": "12vw",
                     });
 
-                    $(".overlay").remove();
+                    $(".overlay").hide();
                     $(".img1").off().click(function(){
                         $(".img1").on("load", function(){
                             $(".text1").remove();
-
+                            $(".img1").click(function(){
+                                window.location.reload();
+                            })
                         }).attr("src", "5b3.png");
                     });
 
