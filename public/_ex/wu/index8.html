@@ -79,7 +79,6 @@
 
             let h = 0;
             $("textArea").on("change keyup keydown", function () {
-                console.log("change")
                 if ($(this).outerHeight() > this.scrollHeight) {
                     $(this).height(0)
                 }
