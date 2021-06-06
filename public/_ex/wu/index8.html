@@ -25,12 +25,18 @@
             position: absolute;
         }
 
+        img{
+            overflow: hidden;
+        }
+
         textarea, textarea:focus {
             border: none;
             outline: none;
             display: block;
             z-index: 100;
             position: absolute;
+            resize: none;
+            overflow: hidden;
             font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
@@ -95,20 +101,9 @@
 
                 let h = 0;
                 $("textArea").on("change keyup keydown", function () {
-                    if ($(this).length === 0) return;
-                    if ($(this).outerHeight() > this.scrollHeight) {
-                        $(this).height(0)
-                    }
-                    let x = 0;
-                    while ($(this).outerHeight() < this.scrollHeight) {
-                        $(this).height($(this).height() + 1);
-                        x++;
-                        if (x > 1000) {
-                            $(this).height(0)
-                            break;
-                        }
-                        ;
-                    }
+                    $("textarea").attr("rows", 1).on("input", e => {
+                        $(e.target).height(0).innerHeight(e.target.scrollHeight);
+                    });
                     $(".bg").height($(this).height() + 70);
                     h = $(this).height();
                 });
