@@ -2,8 +2,7 @@
 <html lang="ja">
 <head>
 
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <meta charset="UTF-8">
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="reset.css">
 
     <style>
-        .test {
+        .test{
             background: rgba(255, 0, 0, 0.2);
         }
 
@@ -20,7 +19,7 @@
             width: 100%;
         }
 
-        .container {
+        .container{
             width: 100%;
             position: absolute;
         }
@@ -33,19 +32,18 @@
             display: block;
             position: absolute;
             z-index: 100;
-            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
         }
 
         .text1 {
             top: 96.5vw;
-            left: 19vw;
+            left : 19vw;
             width: 71vw;
             height: 10vw;
         }
-
         .text2 {
             top: 45.0%;
-            left: 11%;
+            left : 11%;
             width: 80%;
             height: 3%;
         }
@@ -63,18 +61,21 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            $(".overlay").click(function () {
-                $(".img1").on("load", function () {
+            $(".overlay").click(function(){
+                $(".img1").on("load", function(){
 
                     $(".text1").css({
                         "top": "12vw",
                     });
 
-                    $(".img1").off().click(function () {
-                        $("a").attr("href", "index3_2.html");
+                    $(".img1").off().click(function(){
+                        $(".img1").on("load", function(){
+                            $(".text1").remove();
+                        }).attr("src", "5b3.png");
                     });
 
                 }).attr("src", "5b2.png");
+
 
 
             });
@@ -83,8 +84,8 @@
 
 </head>
 <body>
-<a><img src="5b1.png" class="full img1"/></a>
-<input class="text1"/>
-<div class="overlay"></div>
+    <img src="5b1.png" class="full img1" />
+    <input class="text1" />
+    <div class="overlay"></div>
 </body>
 </html>
