@@ -121,9 +121,11 @@
                     let file = "s" + i + "p.png";
                     if (i==3) file = "s" + i + ".png";
                     $(".img1").on("load", function () {
+                        $("textArea").get(0).setSelectionRange(0, 0);
                         $(".text1").val("");
+                        $("textArea").get(0).setSelectionRange(0, 0);
                         $("textArea").trigger("change");
-                        if (i==2) $("textArea").trigger("click");
+                        if (i==2) $("textArea").focus();
                     }).attr("src", file);
 
                     setTimeout(function () {
