@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta charset="UTF-8">
+    <title>Locolon</title>
+
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        .test {
+            background: rgba(255, 0, 0, 0.2);
+        }
+
+        .full {
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            position: absolute;
+        }
+
+        textarea, textarea:focus {
+            border: none;
+            outline: none;
+            display: block;
+            z-index: 100;
+            position: absolute;
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .text1 {
+            bottom: 20vw;
+            left: 12vw;
+            width: 68vw;
+            font-size: 4vw;
+            background: #eee;
+            border-radius: 12px;
+            padding: 3vw;
+            z-index: 100;
+        }
+
+        .bg {
+            background: white;
+            position: absolute;
+            bottom: 20vw;
+            left: 0vw;
+            z-index: 90;
+            width: 100vw;
+        }
+
+        .img2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 83vw;
+            top: 100vw;
+            z-index: 100;
+            width: 17vw;
+            height: 100vw;
+        }
+
+    </style>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script type="application/javascript">
+        $(function () {
+
+            let h = 0;
+            $("textArea").on("change keyup keydown", function () {
+                console.log("change")
+                if ($(this).outerHeight() > this.scrollHeight) {
+                    $(this).height(0)
+                }
+                while ($(this).outerHeight() < this.scrollHeight) {
+                    $(this).height($(this).height() + 1);
+                }
+                $(".bg").height($(this).height() + 30);
+                h = $(this).height();
+            });
+
+            $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
+
+            $("textArea").get(0).focus();
+            $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
+            $("textArea").trigger("change");
+
+            let i = 1;
+            $(".overlay").click(function () {
+                if (i > 3) return;
+                i++;
+
+                let file = "s" + i + "p.png";
+                $(".img1").on("load", function () {
+                    $(".text1").val("");
+                    $("textArea").trigger("change");
+                }).attr("src", file);
+
+                setTimeout(function () {
+                    let file = "s" + i + ".png";
+                    $(".img1").on("load", function () {
+                        $("textArea").trigger("change");
+                    }).attr("src", file);
+                    if (i == 3) {
+                        setTimeout(function () {
+                            let file = "s4.png";
+                            $(".img1").on("load", function () {
+                                $("textArea").trigger("change");
+                            }).attr("src", file);
+                        }, 5000)
+                    }
+                }, 2000)
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+<img src="s1.png" class="full img1"/>
+<img src="s0.png" class="full img2"/>
+<textarea class="text1"></textarea>
+<div class="bg"></div>
+<div class="overlay"></div>
+</body>
+</html>
