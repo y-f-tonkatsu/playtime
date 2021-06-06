@@ -118,6 +118,7 @@
                     i++;
 
                     let file = "s" + i + "p.png";
+                    if (i==3) file = "s" + i + ".png";
                     $(".img1").on("load", function () {
                         $(".text1").val("");
                         $("textArea").trigger("change");
