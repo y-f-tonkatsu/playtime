@@ -34,7 +34,7 @@
             font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
-        .top{
+        .top {
             position: fixed;
             top: 0;
             width: 100vw;
@@ -89,56 +89,61 @@
     <script type="application/javascript">
         $(function () {
 
-            let h = 0;
-            $("textArea").on("change keyup keydown", function () {
-                if($(this).length === 0) return;
-                if ($(this).outerHeight() > this.scrollHeight) {
-                    $(this).height(0)
-                }
-                let x = 0;
-                while ($(this).outerHeight() < this.scrollHeight) {
-                    $(this).height($(this).height() + 1);
-                    x++;
-                    if(x > 1000) {
+            $(".img1").attr("src", "s1.png").on("load", function () {
+
+                let h = 0;
+                $("textArea").on("change keyup keydown", function () {
+                    if ($(this).length === 0) return;
+                    if ($(this).outerHeight() > this.scrollHeight) {
                         $(this).height(0)
-                        break;
-                    };
-                }
-                $(".bg").height($(this).height() + 70);
-                h = $(this).height();
-            });
+                    }
+                    let x = 0;
+                    while ($(this).outerHeight() < this.scrollHeight) {
+                        $(this).height($(this).height() + 1);
+                        x++;
+                        if (x > 1000) {
+                            $(this).height(0)
+                            break;
+                        }
+                        ;
+                    }
+                    $(".bg").height($(this).height() + 70);
+                    h = $(this).height();
+                });
 
-            $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
+                $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
 
-            $("textArea").get(0).focus();
-            $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
-            $("textArea").trigger("change");
+                $("textArea").get(0).focus();
+                $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
+                $("textArea").trigger("change");
 
-            let i = 1;
-            $(".overlay").click(function () {
-                if (i > 3) return;
-                i++;
+                let i = 1;
+                $(".overlay").click(function () {
+                    if (i > 3) return;
+                    i++;
 
-                let file = "s" + i + "p.png";
-                $(".img1").on("load", function () {
-                    $(".text1").val("");
-                    $("textArea").trigger("change");
-                }).attr("src", file);
-
-                setTimeout(function () {
-                    let file = "s" + i + ".png";
+                    let file = "s" + i + "p.png";
                     $(".img1").on("load", function () {
+                        $(".text1").val("");
                         $("textArea").trigger("change");
                     }).attr("src", file);
-                    if (i == 3) {
-                        setTimeout(function () {
-                            let file = "s4.png";
-                            $(".img1").on("load", function () {
-                                $("textArea").trigger("change");
-                            }).attr("src", file);
-                        }, 5000)
-                    }
-                }, 2000)
+
+                    setTimeout(function () {
+                        let file = "s" + i + ".png";
+                        $(".img1").on("load", function () {
+                            $("textArea").trigger("change");
+                        }).attr("src", file);
+                        if (i == 3) {
+                            setTimeout(function () {
+                                let file = "s4.png";
+                                $(".img1").on("load", function () {
+                                    $("textArea").trigger("change");
+                                }).attr("src", file);
+                            }, 5000)
+                        }
+                    }, 2000)
+
+                });
 
             });
         });
@@ -146,7 +151,7 @@
 
 </head>
 <body>
-<img src="s1.png" class="full img1"/>
+<img src="" class="full img1"/>
 <img src="s0.png" class="full img2"/>
 <textarea class="text1"></textarea>
 <div class="bg"></div>
