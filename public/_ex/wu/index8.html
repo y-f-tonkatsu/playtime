@@ -88,8 +88,11 @@
                 if ($(this).outerHeight() > this.scrollHeight) {
                     $(this).height(0)
                 }
+                let x = 0;
                 while ($(this).outerHeight() < this.scrollHeight) {
                     $(this).height($(this).height() + 1);
+                    x++;
+                    if(x > 1000) break;
                 }
                 $(".bg").height($(this).height() + 42);
                 h = $(this).height();
