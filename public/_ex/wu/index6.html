@@ -73,6 +73,9 @@
             $(".img1").on("load", function(){
                 setTimeout(function () {
                     $(".img2").attr("src", "702.png");
+                    $("img").click(function(){
+                        window.location.reload();
+                    })
                 }, 5000);
 
             }).attr("src", "700.png");
