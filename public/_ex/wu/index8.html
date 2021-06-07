@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="reset.css">
 
     <style>
+
+        body {
+            background: #eee;
+        }
+
+        .container{
+            background: #eee;
+            bottom: 0;
+        }
+
         .test {
             background: rgba(255, 0, 0, 0.2);
         }
@@ -25,7 +35,7 @@
             position: absolute;
         }
 
-        img{
+        img {
             overflow: hidden;
         }
 
@@ -47,7 +57,7 @@
             width: 100vw;
         }
 
-        .text1, .text1:focus{
+        .text1, .text1:focus {
             bottom: 0;
             left: 12vw;
             width: 68vw;
@@ -61,21 +71,37 @@
 
         .bg {
             background: white;
-            position: absolute;
             bottom: 0;
             left: 0vw;
             z-index: 90;
             width: 100vw;
         }
 
-        .img1 {
+        .bbg{
+            background: #eee;
+            z-index: -10;
             position: fixed;
-            top: 0;
+            top:0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .img1 {
+            bottom: 0;
         }
 
         .img2 {
             position: fixed;
             bottom: 0;
+            left: 0;
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .stop {
+            position: fixed;
+            top: 0;
             left: 0;
             z-index: 10000;
             pointer-events: none;
@@ -96,7 +122,7 @@
     <script type="application/javascript">
         $(function () {
 
-            $(".img1").attr("src", "s1.png").on("load", function () {
+            $(".img1").attr("src", "ss1.png").on("load", function () {
 
                 $(".img1").off();
 
@@ -117,24 +143,24 @@
                     if (i > 3) return;
                     i++;
 
-                    let file = "s" + i + "p.png";
-                    if (i==3) file = "s" + i + ".png";
+                    let file = "ss" + i + "p.png";
+                    if (i == 3) file = "ss" + i + ".png";
                     $(".img1").on("load", function () {
                         $("textArea").get(0).setSelectionRange(0, 0);
                         $(".text1").val("");
                         $("textArea").get(0).setSelectionRange(0, 0);
                         $("textArea").trigger("change");
-                        if (i==2) $("textArea").focus();
+                        if (i == 2) $("textArea").focus();
                     }).attr("src", file);
 
                     setTimeout(function () {
-                        let file = "s" + i + ".png";
+                        let file = "ss" + i + ".png";
                         $(".img1").on("load", function () {
                             $("textArea").trigger("change");
                         }).attr("src", file);
                         if (i == 3) {
                             setTimeout(function () {
-                                let file = "s4.png";
+                                let file = "ss4.png";
                                 $(".img1").on("load", function () {
                                     $("textArea").trigger("change");
                                 }).attr("src", file);
@@ -150,10 +176,14 @@
 
 </head>
 <body>
-<img src="" class="full img1"/>
-<img src="s0.png" class="full img2"/>
+<div class="container">
+    <img src="" class="full img1"/>
+    <div class="bg"></div>
+</div>
 <textarea class="text1"></textarea>
-<div class="bg"></div>
 <div class="overlay"></div>
+<img src="s0.png" class="full img2"/>
+<img src="stop.png" class="full stop"/>
+<div class="bbg full"></div>
 </body>
 </html>
