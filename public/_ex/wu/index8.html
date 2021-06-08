@@ -152,6 +152,7 @@
                         $(".text1").val("");
                         $("textArea").get(0).setSelectionRange(0, 0);
                         $("textArea").trigger("change");
+                        if (i == 2) $("textArea").focus();
                     }).attr("src", file);
 
                     setTimeout(function () {
