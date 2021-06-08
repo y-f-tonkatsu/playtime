@@ -140,7 +140,8 @@
                 $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
 
                 let i = 1;
-                $(".overlay").click(function () {
+                $(".overlay").click(function (e) {
+                    e.preventDefault();
                     if (i > 3) return;
                     i++;
 
@@ -151,7 +152,6 @@
                         $(".text1").val("");
                         $("textArea").get(0).setSelectionRange(0, 0);
                         $("textArea").trigger("change");
-                        if (i == 2) $("textArea").focus();
                     }).attr("src", file);
 
                     setTimeout(function () {
