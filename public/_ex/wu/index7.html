@@ -19,43 +19,36 @@
             width: 100%;
         }
 
-        .container{
-            width: 100%;
-            position: absolute;
-        }
-
-        input, input:focus {
-            font-size: 5.5vw;
-            background: none;
+        textarea, textarea:focus {
             border: none;
             outline: none;
             display: block;
-            position: absolute;
             z-index: 100;
-            font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+            position: absolute;
+            resize: none;
+            overflow: hidden;
+            background: #eee;
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
-        .text1 {
-            top: 12vw;
-            left : 19vw;
-            width: 71vw;
-            height: 10vw;
-        }
-        .text2 {
-            top: 45.0%;
-            left : 11%;
-            width: 80%;
-            height: 3%;
+        .top {
+            position: fixed;
+            top: 0;
+            width: 100vw;
         }
 
-        .overlay {
-            position: absolute;
-            left: 0;
-            top: 30%;
+        .text1, .text1:focus {
+            bottom: 0;
+            left: 12vw;
+            width: 68vw;
+            font-size: 4vw;
+            background: #eee;
+            border-radius: 12px;
+            padding: 3vw;
             z-index: 100;
-            width: 17%;
-            height: 50%;
+            margin-bottom: 16px;
         }
+
     </style>
 
     <script src="jquery-3.4.1.min.js"></script>
@@ -67,5 +60,7 @@
 </head>
 <body>
     <img src="i1.png" class="full img1" />
+    <textarea class="text1"></textarea>
+
 </body>
 </html>
