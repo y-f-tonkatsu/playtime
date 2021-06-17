@@ -61,12 +61,12 @@
             bottom: 0;
             left: 12vw;
             width: 68vw;
-            font-size: 4vw;
-            background: #eee;
+            font-size: 3.8vw;
+            background: #f6f6f6;
             border-radius: 12px;
-            padding: 3vw;
+            padding: 1.5vw;
             z-index: 100;
-            margin-bottom: 16px;
+            margin-bottom: 16vw;
         }
 
         .bg {
@@ -130,7 +130,7 @@
                 let h = 0;
                 $("textarea").attr("rows", 1).on("input change keyup keydown", e => {
                     $(e.target).height(0).innerHeight(e.target.scrollHeight);
-                    $(".bg").height($(e.target).height() + 50);
+                    $(".bg").height($(e.target).height() + 80);
                 });
 
                 $("textArea").val("");
