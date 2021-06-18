@@ -60,13 +60,13 @@
         .text1, .text1:focus {
             bottom: 0;
             left: 12vw;
-            width: 72vw;
+            width: 66vw;
             font-size: 3.8vw;
             background: #f6f6f6;
-            border-radius: 12px;
-            padding: 1.5vw;
+            border-radius: 16px;
+            padding: 1.5vw 4vw;
             z-index: 100;
-            margin-bottom: 16vw;
+            margin-bottom: 12vw;
         }
 
 
@@ -131,7 +131,7 @@
                 let h = 0;
                 $("textarea").attr("rows", 1).on("input change keyup keydown", e => {
                     $(e.target).height(0).innerHeight(e.target.scrollHeight);
-                    $(".bg").height($(e.target).height() + 80);
+                    $(".bg").height($(e.target).height() + 66);
                 });
 
                 $("textArea").val("同僚が産休に入るから、仕事が増えちゃう。いつも大変大変言って、そんな大変なら");
