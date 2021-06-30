@@ -150,6 +150,7 @@
 
                 $("textArea").keydown(function (e) {
                     if (e.key === "Enter") {
+                        e.preventDefault();
                         $("textArea").val("");
                         $(".img1").attr("src", "820.png");
                         $("textArea").keydown(function (e) {

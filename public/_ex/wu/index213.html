@@ -143,6 +143,7 @@
                 $("textArea").keydown(function (e) {
                     console.log(e.key);
                     if (e.key === "Enter") {
+                        e.preventDefault();
                         $(".text1").val("");
                     }
                 });

@@ -152,6 +152,7 @@
                 $("textArea").keydown(function (e) {
                     console.log(e.key);
                     if (e.key === "Enter") {
+                        e.preventDefault();
                         if (i > 3) return;
                         i++;
 
