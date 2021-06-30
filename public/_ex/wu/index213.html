@@ -17,11 +17,6 @@
             background: #eee;
         }
 
-        .container {
-            background: #eee;
-            bottom: 0;
-        }
-
         .test {
             background: rgba(255, 0, 0, 0.2);
         }
@@ -31,6 +26,8 @@
         }
 
         .container {
+            background: #eee;
+            bottom: 0px;
             width: 100%;
             position: absolute;
         }
@@ -58,7 +55,7 @@
         }
 
         .text1, .text1:focus {
-            bottom: 0;
+            bottom: 0px;
             left: 12vw;
             width: 66vw;
             font-size: 3.8vw;
@@ -69,9 +66,10 @@
             margin-bottom: 12vw;
         }
 
+
         .bg {
             background: white;
-            bottom: 0;
+            bottom: 0px;
             left: 0vw;
             z-index: 90;
             width: 100vw;
@@ -89,12 +87,12 @@
         }
 
         .img1 {
-            bottom: 0;
+            bottom: 0px;
         }
 
         .img2 {
             position: fixed;
-            bottom: 0;
+            bottom: 0px;
             left: 0;
             z-index: 10000;
             pointer-events: none;
@@ -111,17 +109,28 @@
         .overlay {
             position: fixed;
             left: 83vw;
-            bottom: 0vw;
+            bottom: 0px;
             z-index: 100;
             width: 17vw;
             height: 200vw;
         }
 
+        .bottomer{
+            bottom: 0px;
+        }
     </style>
 
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
+
+            $("textArea").on("focus", function(){
+                $(".bottomer").css("bottom", "270px");
+            });
+
+            $("textArea").on("blur", function(){
+                $(".bottomer").css("bottom", "0px");
+            });
 
             $(".img1").attr("src", "213.png").on("load", function () {
 
@@ -139,12 +148,10 @@
                 $("textArea").get(0).focus();
                 $("textArea").get(0).setSelectionRange($("textArea").val().length, $("textArea").val().length)
 
-                let i = 1;
                 $("textArea").keydown(function (e) {
-                    console.log(e.key);
                     if (e.key === "Enter") {
                         e.preventDefault();
-                        $(".text1").val("");
+                        $("textArea").val("");
                     }
                 });
 
@@ -154,14 +161,14 @@
 
 </head>
 <body>
-<div class="container">
-    <img src="" class="full img1"/>
-    <div class="bg"></div>
+<div class="container bottomer">
+    <img src="" class="full img1 bottomer"/>
+    <div class="bg bottomer"></div>
 </div>
-<textarea class="text1"></textarea>
-<div class="overlay"></div>
-<img src="s0.png" class="full img2"/>
+<textarea class="text1 bottomer"></textarea>
+<div class="overlay bottomer"></div>
+<img src="s0.png" class="full img2 bottomer"/>
 <img src="top_hijiri.png" class="full stop"/>
-<div class="bbg full"></div>
+<div class="bbg full bottomer"></div>
 </body>
 </html>
