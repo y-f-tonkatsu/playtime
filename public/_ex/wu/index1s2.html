@@ -81,9 +81,21 @@
                 $(".img1").on("load", function () {
                     $(".bottom, .top").show();
                     $(".img1").click(function () {
-                        window.location.reload();
+
+                        $(".img1").on("load", function () {
+                            $(".bottom, .top").hide();
+                            $(".img1").click(function () {
+                                $(".img1").on("load", function () {
+                                    $(".img1").click(function () {
+                                        window.location.reload();
+                                    });
+
+                                }).attr("src", "1s2d.png");
+                            });
+
+                        }).attr("src", "1s2c.png");
                     });
-                }).attr("src", "1s2_main.png");
+                }).attr("src", "1s2b.png");
 
             });
         });
@@ -93,6 +105,6 @@
 <body>
 <img src="1s2_bottom.png" class="bottom" style="display: none"/>
 <img src="1s2_top.png" class="top" style="display: none"/>
-<img src="1s2_green.png" class="full img1"/>
+<img src="1s2a.png" class="full img1"/>
 </body>
 </html>
