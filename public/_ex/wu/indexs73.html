@@ -53,7 +53,7 @@
 
         .text1 {
             top: 117vw;
-            left: 9vw;
+            left: 7.6vw;
             width: 71vw;
             height: 10vw;
             font-size: 4vw;
@@ -110,22 +110,45 @@
             return str.slice(0, i) + "," + str.slice(i)
         }
 
+        let t1, t2, t3, t4;
+
         $(function () {
             let view = 23215;
             let rt = 1513;
             let qrt = 238;
             let good = 5062;
 
-            setInterval(function(){
-                view += Math.floor(Math.random() * 2) + 2;
-                rt += Math.floor(Math.random() * 2) + 4;
-                qrt += Math.floor(Math.random() * 2) + 3;
-                good += Math.floor(Math.random() * 3) + 4;
-                $(".view").val(format(view));
-                $(".rt").val(format(rt));
-                $(".qrt").val(format(qrt));
-                $(".good").val(format(good));
-            }, 400)
+
+            [
+                {
+                    num: 23215,
+                    elem: $(".view"),
+                    nextF: function(){return Math.floor(Math.random() * 900) + 800;}
+                },
+                {
+                    num: 1513,
+                    elem: $(".rt"),
+                    nextF: function(){return Math.floor(Math.random() * 1200) + 1400;}
+                },
+                {
+                    num: 238,
+                    elem: $(".qrt"),
+                    nextF: function(){return Math.floor(Math.random() * 2000) + 2000;}
+                },
+                {
+                    num: 5062,
+                    elem: $(".good"),
+                    nextF: function(){return Math.floor(Math.random() * 600) + 700;}
+                },
+            ].forEach(function(item){
+                let set = function(next){
+                    $(item.elem).val(item.num++);
+                    setTimeout(function(){
+                        set(item.nextF());
+                    }, next);
+                }
+                set(item.nextF());
+            });
 
         });
     </script>
