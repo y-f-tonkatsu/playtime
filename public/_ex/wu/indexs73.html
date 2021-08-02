@@ -142,7 +142,7 @@
                 },
             ].forEach(function(item){
                 let set = function(next){
-                    $(item.elem).val(item.num++);
+                    $(item.elem).val(format(item.num++));
                     setTimeout(function(){
                         set(item.nextF());
                     }, next);
