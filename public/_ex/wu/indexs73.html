@@ -52,7 +52,7 @@
         }
 
         .text1 {
-            top: 117vw;
+            top: 137vw;
             left: 6vw;
             width: 71vw;
             height: 10vw;
@@ -61,7 +61,7 @@
         }
 
         .text2 {
-            top: 135.5vw;
+            top: 155.5vw;
             left: 5vw;
             width: 71vw;
             height: 10vw;
@@ -71,7 +71,7 @@
         }
 
         .text3 {
-            top: 135.5vw;
+            top: 155.5vw;
             left: 41vw;
             width: 71vw;
             height: 10vw;
@@ -81,7 +81,7 @@
         }
 
         .text4 {
-            top: 146vw;
+            top: 166vw;
             left: 5vw;
             width: 71vw;
             height: 10vw;
@@ -118,32 +118,47 @@
             let qrt = 238;
             let good = 5062;
 
+            let i = 0;
+            let first = true;
 
             [
                 {
                     num: 23215,
                     elem: $(".view"),
-                    nextF: function(){return Math.floor(Math.random() * 900) + 800;}
+                    nextF: function () {
+                        return Math.floor(Math.random() * 900) + 800;
+                    }
                 },
                 {
                     num: 1513,
                     elem: $(".rt"),
-                    nextF: function(){return Math.floor(Math.random() * 1200) + 1400;}
+                    nextF: function () {
+                        return 1500;
+                    }
                 },
                 {
                     num: 238,
                     elem: $(".qrt"),
-                    nextF: function(){return Math.floor(Math.random() * 2000) + 2000;}
+                    nextF: function () {
+                        if(first) {
+                            first = false;
+                            return 2100
+                        };
+                        return 1500;
+                    }
                 },
                 {
                     num: 5062,
                     elem: $(".good"),
-                    nextF: function(){return Math.floor(Math.random() * 700) + 300 * Math.floor(Math.random() * 4);}
+                    nextF: function () {
+                        i++;
+                        return [1000, 1000, 700][i % 3];
+                    }
                 },
-            ].forEach(function(item){
-                let set = function(next){
+            ].forEach(function (item) {
+                let set = function (next) {
                     $(item.elem).val(format(item.num++));
-                    setTimeout(function(){
+                    setTimeout(function () {
                         set(item.nextF());
                     }, next);
                 }
