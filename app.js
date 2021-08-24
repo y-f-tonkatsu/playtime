@@ -24,7 +24,7 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  res.status(404).send('Sorry cant find that!');
+  res.status(404).send('<h1>404: ページが存在しません</h1>');
 });
 
 // error handler
