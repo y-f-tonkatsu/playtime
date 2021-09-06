@@ -16,7 +16,6 @@ class ListItem extends React.Component {
         this.state = {
             'work': props.work
         }
-
     }
 
     render() {
