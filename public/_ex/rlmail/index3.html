@@ -84,6 +84,7 @@
 
 
         .img2 {
+            margin-bottom: 15vw ;
         }
 
         .stop {
@@ -111,7 +112,8 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            let num = 0;
+            $(".container").scrollTop(100000000);
+            let num = 1;
             $("textArea").keydown(function (e) {
 
                 if (e.key === "Enter") {
@@ -119,7 +121,9 @@
                     e.preventDefault();
                     $("textArea").text("");
                     num++;
-                    $(".img2").attr("src", "a" + num + ".png");
+                    $(".img2").attr("src", "a" + num + ".png").on("load", function(){
+                        $(".container").scrollTop(100000000);
+                    });
 
                 }
             });
