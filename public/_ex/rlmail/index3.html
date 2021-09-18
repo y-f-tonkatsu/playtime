@@ -32,11 +32,24 @@
 
         .container {
             top: 0px;
-            width: 414px;
-            height: 466px;
+            width: 100%;
             position: absolute;
             border: solid;
             overflow-y: scroll;
+        }
+
+        .container-text {
+            top: 100vw;
+            width: 100%;
+            height: 15vw;
+            position: fixed;
+            border: solid;
+            background-image: url("text.png");
+            z-index: 10000000;
+
+        }
+
+        .bg-text{
         }
 
         img {
@@ -108,9 +121,11 @@
 </head>
 <body>
 <img src="top.png" class="top"/>
+<div class="container-text">
 <textarea class="text1"></textarea>
+</div>
 <div class="container">
-    <img src="s53_5.png" class="full img2"/>
+    <img src="main_no_bottom.png" class="full img2"/>
 </div>
 </body>
 </html>
