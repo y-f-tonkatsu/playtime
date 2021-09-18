@@ -113,20 +113,25 @@
         $(function () {
             $(".container").scrollTop(100000000);
             let num = 1;
+            set();
             $("textArea").keydown(function (e) {
 
                 if (e.key === "Enter") {
 
                     e.preventDefault();
-                    $("textArea").val("");
-                    num++;
-                    if(num === 3) num = 1;
-                    $(".img2").attr("src", "a" + num + ".png").on("load", function(){
-                        $(".container").scrollTop(100000000);
-                    });
-
+                    set();
                 }
             });
+
+            function set(){
+                $("textArea").val("");
+                num++;
+                if(num === 3) num = 1;
+                $(".img2").attr("src", "a" + num + ".png").on("load", function(){
+                    $(".container").scrollTop(100000000);
+                });
+
+            }
 
 
         });
