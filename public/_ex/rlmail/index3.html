@@ -31,11 +31,10 @@
         }
 
         .container {
-            top: 15.5gvw;
+            top: 15.5 gvw;
             width: 100%;
             height: 80vw;
             position: absolute;
-            border: solid;
             overflow-y: scroll;
         }
 
@@ -44,7 +43,6 @@
             width: 100%;
             height: 15vw;
             position: fixed;
-            border: solid;
             z-index: 10000000;
 
         }
@@ -113,7 +111,20 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
-            $("textarea").text($(".img2").width());
+            let num = 0;
+            $("textArea").keydown(function (e) {
+
+                if (e.key === "Enter") {
+
+                    e.preventDefault();
+                    $("textArea").text("");
+                    num++;
+                    $(".img2").attr("src", "a" + num + ".png");
+
+                }
+            });
+
+
         });
     </script>
 
@@ -125,7 +136,7 @@
     <img src="text.png" class="full"/>
 </div>
 <div class="container">
-    <img src="main_no_bottom.png" class="full img2"/>
+    <img src="a1.png" class="full img2"/>
 </div>
 </body>
 </html>
