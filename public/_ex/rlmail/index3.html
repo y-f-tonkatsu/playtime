@@ -31,26 +31,25 @@
         }
 
         .container {
-            top: 0px;
+            top: 15.5gvw;
             width: 100%;
-            height: 50vw;
+            height: 80vw;
             position: absolute;
             border: solid;
             overflow-y: scroll;
         }
 
         .container-text {
-            top: 50vw;
+            top: 70vw;
             width: 100%;
             height: 15vw;
             position: fixed;
             border: solid;
-            background-image: url("text.png");
             z-index: 10000000;
 
         }
 
-        .bg-text{
+        .bg-text {
         }
 
         img {
@@ -76,9 +75,9 @@
         }
 
         .text1, .text1:focus {
-            background: red;
+            background: none;
             top: 3vw;
-            left: 16vw;
+            left: 17vw;
             width: 73vw;
             height: 6vw;
             font-size: 3.8vw;
@@ -122,7 +121,8 @@
 <body>
 <img src="top.png" class="top"/>
 <div class="container-text">
-<textarea class="text1"></textarea>
+    <textarea class="text1"></textarea>
+    <img src="text.png" class="full"/>
 </div>
 <div class="container">
     <img src="main_no_bottom.png" class="full img2"/>
