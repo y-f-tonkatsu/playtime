@@ -119,7 +119,7 @@
                 if (e.key === "Enter") {
 
                     e.preventDefault();
-                    $("textArea").text("");
+                    $("textArea").val("");
                     num++;
                     $(".img2").attr("src", "a" + num + ".png").on("load", function(){
                         $(".container").scrollTop(100000000);
