@@ -14,13 +14,11 @@
     <style>
 
         html {
-            pointer-events: none;
             overflow: hidden;
         }
 
         body {
             background: #eee;
-            pointer-events: none;
             overflow: hidden;
         }
 
@@ -37,7 +35,7 @@
             width: 414px;
             height: 466px;
             position: absolute;
-            border:solid;
+            border: solid;
             overflow-y: scroll;
         }
 
@@ -46,7 +44,6 @@
         }
 
         textarea, textarea:focus {
-            pointer-events: all;
             border: none;
             outline: none;
             display: block;
@@ -55,6 +52,11 @@
             resize: none;
             overflow: hidden;
             font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        textarea:focus {
+            border-bottom: 14px solid red;
+            bottom: -6px;
         }
 
         .top {
