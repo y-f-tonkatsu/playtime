@@ -112,25 +112,23 @@
     <script type="application/javascript">
         $(function () {
             $(".container").scrollTop(100000000);
-            let num = 1;
-            set();
+            let num = 0;
+            set(1);
             $("textArea").keydown(function (e) {
 
                 if (e.key === "Enter") {
 
                     e.preventDefault();
-                    set();
+                    set(2);
                 }
             });
 
-            function set(){
+            function set(num){
+                console.log(num);
                 $("textArea").val("");
-                num++;
-                if(num === 3) num = 1;
                 $(".img2").attr("src", "a" + num + ".png").on("load", function(){
                     $(".container").scrollTop(100000000);
                 });
-
             }
 
 
