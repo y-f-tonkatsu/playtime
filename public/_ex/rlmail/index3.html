@@ -125,7 +125,10 @@
                     setTimeout(function () {
                         set(3)
                         setTimeout(function () {
-                            set(4)
+                            set(4);
+                            $(".container").click(function(){
+                                window.location.reload();
+                            })
 
                         }, 1000)
                     }, 5000)
