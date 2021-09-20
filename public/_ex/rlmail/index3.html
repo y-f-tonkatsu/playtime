@@ -83,7 +83,7 @@
 
 
         .img2 {
-            margin-bottom: 14vw ;
+            margin-bottom: 14vw;
         }
 
         .stop {
@@ -122,13 +122,21 @@
 
                     e.preventDefault();
                     set(2);
+                    setTimeout(function () {
+                        set(3)
+                        setTimeout(function () {
+                            set(4)
+
+                        }, 1000)
+                    }, 5000)
                 }
             });
 
-            function set(num){
+            function set(num) {
                 $("textArea").val("");
-                $(".img2").attr("src", "b" + num + ".png").on("load", function(){
+                $(".img2").attr("src", "b" + num + ".png").on("load", function () {
                     $(".container").scrollTop(100000000);
+
                 });
             }
 
