@@ -12,12 +12,23 @@
     <link rel="stylesheet" href="reset.css">
 
     <style>
+
+        body{
+            background-image: url("s100.png");
+            height: 2000px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: 100%;        }
+
         .test {
             background: rgba(255, 0, 0, 0.2);
         }
 
         .full {
             width: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
         }
 
         .container {
@@ -36,7 +47,8 @@
             font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
         }
 
-        .text1 {
+        .v0 {
+            position: absolute;
             top: 35vw;
             left: 11vw;
             width: 80vw;
@@ -67,18 +79,25 @@
         }
 
         .v {
-            margin: 6% 10%;
+            margin: 10% 12%;
             max-width: 80%;
         }
+
+        .vz {
+            margin: 20.4vw 0 0 15.4vw;
+            width: 50vw;
+        }
+
     </style>
 
     <script src="jquery-3.4.1.min.js"></script>
     <script type="application/javascript">
         $(function () {
             $(".container").hide();
-            $(".main").click(function () {
-                $(".container").show();
-                $(".v").get(0).play();
+            $(".vz").click(function (e) {
+                e.preventDefault();
+                $("video").removeClass("vz").addClass("v");
+                $(".container").show().append($("video"));
             });
         });
     </script>
@@ -86,8 +105,7 @@
 </head>
 <body>
 <div class="container">
-    <video src="s100.mp4" class="v" controls preload="auto"></video>
 </div>
-<img src="s100.png" class="full main"/>
+<video src="s100.mp4" class="vz" controls preload="auto"></video>
 </body>
 </html>
