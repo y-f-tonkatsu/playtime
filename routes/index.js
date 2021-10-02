@@ -23,14 +23,14 @@ var respond = function (req, res, next, id) {
         protocol: req.protocol,
         host: req.get('host')
     });
-    base = "https://knights.ton-katsu.net/playtime/";
+    base = "http://knights.ton-katsu.net/playtime/";
 
     var current = url.format({
         protocol: req.protocol,
         host: req.get('host'),
         pathname: req.originalUrl
     });
-    current = "https://knights.ton-katsu.net/playtime/:" + id ;
+    current = "http://knights.ton-katsu.net/playtime/:" + id ;
 
     _.each(worksJson, function (work) {
         if (work.id == id) {
