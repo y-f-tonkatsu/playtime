@@ -23,7 +23,7 @@ var respond = function (req, res, next, id) {
         protocol: req.protocol,
         host: req.get('host')
     });
-    base = "http://knights.ton-katsu.net/playtime/";
+    base = "https://knights.ton-katsu.net/playtime/";
 
     var current = url.format({
         protocol: req.protocol,
