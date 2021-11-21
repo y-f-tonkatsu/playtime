@@ -134,10 +134,11 @@
                         height: h,
                     })
                 } else {
-                    $(".extra").hide();
                     $(".main")
                         .on("load", function () {
                             $(".text1").hide();
+                            $(".extra").hide();
+                            $(".container").hide();
                         })
                         .attr("src", base + i + ".png")
                         .show();
