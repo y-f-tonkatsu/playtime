@@ -135,7 +135,7 @@
                     })
                 } else {
                     $(".main")
-                        .on("load", function () {
+                        .off("load").on("load", function () {
                             $(".text1").hide();
                             $(".extra").hide();
                             $(".container").hide();
